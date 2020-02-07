@@ -11,7 +11,7 @@ TODO :
 
 - Ouvrir un article
 
-- Création d'autres pages
+- Création d'autres pages (fausse recherche de photo)
 
 - Ouvrir description de celui qui a posté l'article
 
