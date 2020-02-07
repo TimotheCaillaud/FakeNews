@@ -23,3 +23,19 @@ document.getElementById("button-addon2").onclick = function () {
     ajout = "";
     document.getElementById('input_text').value = "";
 };
+
+let listOnglet = ["Corps" ,  "Article_Premier"];
+  function changeVisibility(NameDiv) {
+    listOnglet.forEach(element => {
+      if (element == NameDiv){
+        document.getElementById(element).classList.add('d-flex');
+        document.getElementById(element).classList.add('flex-row');
+        document.getElementById(element).classList.add('Page_Up');
+        document.getElementById(element).classList.remove('Page_Down');
+      } else {
+        document.getElementById(element).classList.remove('d-flex');
+        document.getElementById(element).classList.remove('flex-row');
+        document.getElementById(element).classList.remove('Page_Up');
+        document.getElementById(element).classList.add('Page_Down');
+      }});    
+  }
