@@ -15,8 +15,9 @@ TODO :
 
 - "Enter" pour envoyer un message
 
-- Message envoyé du bon côté
 
 - Créer les échanges 
 
 - Gérer la distinction entre réponse fermé et ouverte
+
+- ~~Message envoyé du bon côté~~
