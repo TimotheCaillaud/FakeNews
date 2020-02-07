@@ -17,7 +17,7 @@ document.getElementById("button-addon2").onclick = function () {
 
     if(ajout != ""){
         document.getElementById("ajout_message_"+conv).innerHTML +=  
-        '<div class="d-flex align-items-end p-2 flex-column"><div class="Text_Conv p-2 bd-highlight d-inline-flex px-4 text-left bg-white rounded">'+ajout+'</div></div>'; 
+        '<div class="d-flex align-items-end flex-column"><div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-white rounded">'+ajout+'</div></div>'; 
     }
     
     ajout = "";
