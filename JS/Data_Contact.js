@@ -80,7 +80,7 @@ function chargementDesContacts() {
                 '<div class="Correspondant">' + Data_Contact[k].Nom +
                 '</div>' +
                 '<div class="Echange bg-primary">' +
-                '<div id ="ajout_message_'+Data_Contact[k].Ref+'" class="Echange p-2 d-inline-flex flex-column bd-highlight">'
+                '<div id ="ajout_message_'+Data_Contact[k].Ref+'" class=" p-2 d-inline-flex flex-column bd-highlight">'
             );
         }
         else {
@@ -89,7 +89,7 @@ function chargementDesContacts() {
                 '<div class="Correspondant">' + Data_Contact[k].Nom +
                 '</div>' +
                 '<div class="Echange bg-primary">' +
-                '<div id ="ajout_message_'+Data_Contact[k].Ref+'" class="Echange p-2 d-inline-flex flex-column bd-highlight">'
+                '<div id ="ajout_message_'+Data_Contact[k].Ref+'" class=" p-2 d-inline-flex flex-column bd-highlight">'
             );
         }
 
