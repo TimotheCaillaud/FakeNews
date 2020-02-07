@@ -80,7 +80,7 @@ function chargementDesContacts() {
                 '<div class="Correspondant">' + Data_Contact[k].Nom +
                 '</div>' +
                 '<div class="Echange bg-primary">' +
-                '<div id ="ajout_message_'+Data_Contact[k].Ref+'" class="d-inline-flex flex-column bd-highlight">'
+                '<div id ="ajout_message_'+Data_Contact[k].Ref+'" class="Echange p-2 d-inline-flex flex-column bd-highlight">'
             );
         }
         else {
@@ -89,7 +89,7 @@ function chargementDesContacts() {
                 '<div class="Correspondant">' + Data_Contact[k].Nom +
                 '</div>' +
                 '<div class="Echange bg-primary">' +
-                '<div id ="ajout_message_'+Data_Contact[k].Ref+'" class="d-inline-flex flex-column bd-highlight">'
+                '<div id ="ajout_message_'+Data_Contact[k].Ref+'" class="Echange p-2 d-inline-flex flex-column bd-highlight">'
             );
         }
 
@@ -101,8 +101,8 @@ function chargementDesContacts() {
                 //cas message classique du contact
                 case 'M':
                     document.write(
-                        '<div class="d-flex align-items-end p-2 flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-4 mb-1 text-right bg-secondary rounded">' + Data_Contact[k].Echange[key] +
+                        '<div class="d-flex align-items-start flex-column">' +
+                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-secondary rounded">' + Data_Contact[k].Echange[key] +
                         '</div>' +
                         '</div>'
                     );
@@ -110,8 +110,8 @@ function chargementDesContacts() {
                 //cas message classique du joueur
                 case "N":
                     document.write(
-                        '<div class="d-flex align-items-start p-2 flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-4 text-left bg-white rounded">' + Data_Contact[k].Echange[key] +
+                        '<div class="d-flex align-items-end flex-column">' +
+                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-white rounded">' + Data_Contact[k].Echange[key] +
                         '</div>' +
                         '</div>'
                     );
@@ -119,8 +119,8 @@ function chargementDesContacts() {
                 //cas question du contact
                 case "Q":
                     document.write(
-                        '<div class="d-flex align-items-end p-2 flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-4 mb-1 text-right bg-secondary rounded">' + Data_Contact[k].Echange[key] +
+                        '<div class="d-flex align-items-start flex-column">' +
+                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-secondary rounded">' + Data_Contact[k].Echange[key] +
                         '</div>' +
                         '</div>'
                     );
