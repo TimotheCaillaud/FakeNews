@@ -25,4 +25,6 @@ TODO :
 
 - Gérer la distinction entre réponse fermé et ouverte
 
+-Creation pop-up explicatif
+
 - ~~Message envoyé du bon côté~~
