@@ -56,7 +56,7 @@ function chargementDesContacts() {
     for (var j = 0; j < Data_Contact.length; j++) {
         document.write(
             '<li class="nav-item d-flex flex-row">' +
-            '<img src="../' + Data_Contact[j].Photo + '" class="Photo_posteur" />' +
+            '<img src="../imageSources/' + Data_Contact[j].Photo + '" class="Photo_posteur" />' +
             '<a class="nav-link" data-toggle="tab" href="#' + Data_Contact[j].Ref + '">' + Data_Contact[j].Nom +
             '</a>' +
             '</li>'
@@ -145,7 +145,7 @@ function chargementDesContacts() {
                     '<button class="btn btn-outline-secondary" type="button" id="button-addon2">Send</button>' +
                 '</div>' +
             '</div>' +
-        '</div>' 
+        '</div>'
     );
 
     document.write(
