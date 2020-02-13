@@ -22,18 +22,18 @@
   <div id="Total" style="height: 20vh;">
     <div id="En-tete">
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="height:50vb" id="Header_onglet">
-        <ul class="navbar-nav">
+        <ul id="navBar" class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" onclick="changeVisibility('Corps');" href="#Corps">FakeBook</a>
+            <a id="FakeBookTrigger" class="nav-link active" onclick="changeVisibility('FakeBook');" href="#Corps">FakeBook</a>
           </li>
-          <li class="nav-item">
+          <!-- <li class="nav-item">
             <a class="nav-link" onclick="changeVisibility('Article_Premier');"
               href="#Article_Premier">Article_Premier</a>
-          </li>
+          </li> -->
         </ul>
       </nav>
       <!-- NavBar Recherche -->
-      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="margin-top:56px; height:50vb"
+      <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="margin-top:36px; height:50vb"
         id="Header_recherche">
         <ul class="navbar-nav">
           <li class="nav-item">
@@ -52,13 +52,26 @@
         </ul>
       </nav>
     </div>
-    <div id="FakeBook" class="d-flex flex-row">
+     <div id="FakeBook" class="d-flex flex-row">
+
+      <div id="UserInfo" class=" bg-warning Page_Up d-inline-block">
+        <div class="ProfilePicture">
+          <img  src="../ImageSources/profilePic.png" />
+        </div>
+        <p>
+        <div class= "UserInfoText" > Misoko Chan  </div>
+        <div class= "UserInfoText"> 13 years old  </div>
+        <p>
+        <div class= "UserInfoText"> Friends: 143  </div>
+        <div class= "UserInfoText"> Notififactions: 0  </div>
+      </div>
+
       <div id="Corps" class="Page_Up d-flex flex-row">
         <script>
           chargementDesArticles();
         </script>
       </div>
-      <div id="Article_Premier" class="Page_Down">
+  <!--    <div id="Article_Premier" class="Page_Down">
         <div id="Gauche" class="d-inline-block"></div>
         <div id="Liste_Articles" class="bg-warning px-5 d-inline-block">
 
@@ -108,11 +121,12 @@
         </div>
         <div id="Droite" class="d-inline-block">
         </div>
-      </div>
+      </div> -->
         <script>
           chargementDesContacts();
         </script>
     </div>
+
   </div>
 
 
@@ -132,13 +146,13 @@
 </body>
 
 </html>
-<!-- 
+<!--
 TODO list:
 
 - Taille texte nom du contact adaptatif
 - Classe pour : Article, Conversation, Titre
-- 
-- 
--  
+-
+-
+-
 
 -->

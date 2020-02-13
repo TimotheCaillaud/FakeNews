@@ -3,7 +3,7 @@
     overflow-y: hidden;
 }
 .Page_Up{
-    padding-top:112px;
+    padding-top:105px;
     height: 100vh;
 }
 
@@ -12,14 +12,20 @@
 }
 
 #Liste_Articles{
-    width: 80vw;
+    width: 60vw;
     height: 100%;
     overflow-y:scroll;
 }
 
+#UserInfo{
+    width: 20vw;
+    height: 100%;
+    background-color: orange;
+}
+
 #Messagerie{
     padding-top:112px;
-    width: 20vw;
+    width: 30vw;
     height: 100%;
 }
 
@@ -35,8 +41,25 @@
     height: 72%;
 }
 
-.Article{
 
+.ProfilePicture{
+  padding-top: 25px;
+  padding-left: 4vw;
+}
+
+.ProfilePicture img{
+  width: 12vw;
+}
+
+.UserInfoText{
+  padding-left: 4vw;
+  font-size: 1em;
+  font-weight:bold;
+}
+
+
+.Article{
+  border-radius: 10px;
 }
 
 .Artcile_Header{
@@ -45,8 +68,22 @@
 
 .Photo_posteur{
     margin: 5px;
-    height: 50px;
-    width: 50px;
+    margin-left: 10px;
+    margin-top: 10px;
+
+
+    height: 40px;
+    width: 40px;
+}
+
+.Publieur{
+    text-overflow: ellipsis;
+    font-size: 1.1em;
+    margin-top: 15px;
+    margin-left: 5px;
+    font-weight:bold;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
 .Titre_Article{
@@ -57,20 +94,9 @@
     overflow: hidden;
 }
 
-
-.Publieur{
-    text-overflow: ellipsis;
-    font-size: 1.5em;
-    margin-top: 10px;
-    margin-left: 5px;
-    font-weight:bold;
-    white-space: nowrap;
-    overflow: hidden;
-}
-
 .Contenu{
     text-overflow: ellipsis;
-    font-size: 1.3em;
+    font-size: 1em;
     margin-left: 15px;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -80,28 +106,27 @@
 
 
 
-.Image { width: 100%; max-height: 375px; overflow: hidden; }
-.Image img {  width: 100%; max-height: initial; /* Maybe optional. See note below */ }
-
+.ArticleImagePreview { cursor:pointer;  max-height: 230px; overflow: hidden; }
+.ArticleImagePreview img {  width: 100%; max-height: initial }
 
 
 .Publication_Statistiques{
 
     margin-bottom: 10px;
     margin-top: 10px;
-
 }
 
 .Stat_Logo{
+    margin-top: 3px;
     margin-left: 25px;
-    height: 30px;
-    width: 30px;
+    height: 20px;
+    width: 20px;
 
 }
 
 .Stat_Num{
-  margin-left: 8px;
-    font-size: 1.2em;
+    margin-left: 8px;
+    font-size: 1em;
     font-weight:bold;
 }
 
@@ -130,4 +155,24 @@
 
 .ajout-message{
     width: 100%;
+}
+
+.ArticlePage{
+  width: 100%;
+  height: auto;
+
+  overflow-y:scroll;
+}
+
+.ArticlePage img{
+  width: 100%;
+
+}
+
+.selectedTab{
+  color: blue;
+}
+
+.unselectedTab{
+  color: white;
 }
