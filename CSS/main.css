@@ -99,7 +99,7 @@
     text-overflow: ellipsis;
     font-size: 1em;
     margin-left: 15px;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     margin-top: 10px;
     white-space: nowrap;
     overflow: hidden;
@@ -109,6 +109,26 @@
 
 .ArticleImagePreview {  cursor:pointer;  max-height: 300px; overflow: hidden; }
 .ArticleImagePreview img {  width: 100%; max-height: initial }
+
+.articleDescription{
+    background-color: #0003;
+    cursor:pointer;
+}
+
+.articlePublisher{
+    padding-top: 10px;
+    padding-left: 20px;
+    font-size: 1.2em;
+    color: 	#BBB
+}
+
+.articleTitle{
+    padding-left: 20px;
+    padding-bottom: 15px;
+    font-size: 1.2em;
+    font-weight:bold;
+    color: white
+}
 
 .PublicationImage img {  width: 100%; max-height: initial }
 

@@ -4,6 +4,9 @@ let Data_Article = [
         Photo: "contact_android.png",
         Image: "KoreaChristianityPreview.jpg",
         Link: "articleTest",
+        ArticleTitle: "North Korea Will Open Its Doors to Christianity",
+        ArticlePublisher: "CHARISMA",
+        Url: "http://www.charismamag.com/blogs/fire-in-my-bones/36789-north-korea-will-open-its-doors-to-christianity",
         Contenu: "Wow.. North Korea is more open that I thought &#128559",
         Likes: 27,
         Comments: 10,
@@ -25,16 +28,36 @@ let Data_Article = [
         Contenu: "Very interesting article if your looking for information for a proper diet &#129488",
         Image: "optimalWellnessCenterPreview.jpg",
         Link: "articleTest",
+        ArticleTitle: "Reaching for Optimal Wellness",
+        ArticlePublisher: "Optimal Wellness Center",
+        Url: "https://web.archive.org/web/20000831061431/http://www.mercola.com/forms/wellness_condensed.htm",
         Likes: 15,
         Comments: 1,
         Shares: 2
     },
 
     {
+        Publieur: "Jibé ",
+        Photo: "contact_android.png",
+        Contenu: "As a big fan of banana, I'm happy to finnaly find answer to my questions ",
+        Image: "timesBananaPreview.jpg",
+        Link: "articleTest",
+        ArticleTitle: "Are Bananas Really Worth the Calories?",
+        ArticlePublisher: "Time",
+        Url: "https://time.com/4017962/banana-nutrition",
+        Likes: 11,
+        Comments: 2,
+        Shares: 3
+    },
+
+    {
         Publieur: "Mario",
         Photo: "contact_android.png",
-        Contenu: "Finally the true about Obama, I was sure all those news were not reliable &#128527",
+        Contenu: "Finally the truth about Obama ! &#128527",
         Image: "snopeObamaPreview.jpg",
+        ArticleTitle: "Did Michelle Obama File For Divorce After Barack Admitted He Was Gay?",
+        ArticlePublisher: "Snopes",
+        Url: "http:/random",
         Link: "articleTest",
         Likes: 21,
         Comments: 6,
@@ -47,6 +70,9 @@ let Data_Article = [
         Photo: "contact_android.png",
         Contenu: "I know why I didn't vote for him thought...  &#128528 &#128528",
         Image: "ObamaFakeNewsReview.jpg",
+        ArticleTitle: "Michelle Obama Files For Divorce After Shocking Revelation; Barack Obama Admits: ‘I’m Gay!’",
+        ArticlePublisher: "Wit The Shit",
+        Url: "https://wittheshit.com/michelle-obama-files-for-divorce-after-shocking-revelation-barack-obama-admits-im-gay/",
         Link: "articleTest",
         Likes: 1,
         Comments: 0,
@@ -133,7 +159,6 @@ let Data_Article = [
 
 function chargementDesArticles(){
 
-
     document.write(
         '<div id="Gauche" class=" d-inline-block"></div>'+
         '<div id="Liste_Articles" class=" px-5 d-inline-block">'
@@ -142,20 +167,24 @@ function chargementDesArticles(){
     shuffle(Data_Article);
     for (var j=0; j<Data_Article.length;j++) {
 
-            let image;
+            let image = "";
+            let articleDescription = "";
 
             if(Data_Article[j].Image){
               if(Data_Article[j].Link){
                 image = '<div class="ArticleImagePreview">'+
-                  '<img  src="../ImageSources/'+ Data_Article[j].Image + '" onclick="addArticleWindow(\'' + Data_Article[j].Link + '\');" />'+
+                  '<img class="ArticleImagePreview" src="../ImageSources/'+ Data_Article[j].Image + '" onclick="addArticleWindow(\'' + Data_Article[j].Link + '\',\'' + Data_Article[j].Url + '\');" />'+
                 '</div>';
+                articleDescription = '<div class="articleDescription" onclick="addArticleWindow(\'' + Data_Article[j].Link + '\');">'+
+                  '<div class="articlePublisher">'+ Data_Article[j].ArticlePublisher +'</div>' +
+                  '<div class="articleTitle">'+ Data_Article[j].ArticleTitle +'</div>' +
+                '</div>';
+
               }else{
                 image = '<div class="PublicationImage">'+
                   '<img  src="../ImageSources/'+ Data_Article[j].Image + '" />'+
                 '</div>';
               }
-            }else{
-              image = '';
             }
 
             document.write(
@@ -170,6 +199,7 @@ function chargementDesArticles(){
                     '<div class="Contenu ">'+ Data_Article[j].Contenu +
                     '</div>'+
                     image +
+                    articleDescription +
                     '<div class= "d-flex Publication_Statistiques ">'+
                       '<img class="Stat_Logo" src="../ImageSources/like_logo.svg" class="Image" />'+
                       '<div class="Stat_Num">'+ Data_Article[j].Likes +'</div>'+
