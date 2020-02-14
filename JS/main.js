@@ -108,7 +108,7 @@ function addArticleWindow(articleTitle,url){
       '<input id="' + articleTitle +'Remove" type="image" src="../ImageSources/removeMain.png"  onclick="removeTab(\'' + articleTitle + '\');" alt="Submit" width="10" height="10">' +
     '</li>'
 
-
+  console.log(articleTitle + '.png')
   let site = document.getElementById("Total");
   site.innerHTML +=
    '<div class="ArticlePage" id="' + articleTitle + '" class="Page_Up d-flex flex-row">' +
