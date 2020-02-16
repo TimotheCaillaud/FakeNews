@@ -60,7 +60,9 @@ function changeVisibility(NameDiv) {
 
           document.getElementById(element.name).classList.add('d-flex');
           document.getElementById(element.name).classList.add('flex-row');
-          document.getElementById(element.name).classList.add('Page_Up');
+          if(element != "FakeBook"){
+            document.getElementById(element.name).classList.add('Page_Up');
+          }
           document.getElementById(element.name).classList.remove('Page_Down');
           document.getElementById(element.name+"Trigger").classList.add('active');
           document.getElementById("urlBar").value = element.url;
