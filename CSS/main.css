@@ -107,10 +107,20 @@
 
 }
 
-.ArticleImagePreview {  cursor:pointer;  max-height: 300px; overflow: hidden; }
-.ArticleImagePreview img {  width: 100%; max-height: initial }
+.ArticleImagePreview {  
+    cursor:pointer;  
+    max-height: 300px; 
+    overflow: hidden; 
+}
+.ArticleImagePreview img {  
+    width: 100%; 
+    max-height: initial 
+}
 
-.PublicationImage img {  width: 100%; max-height: initial }
+.PublicationImage img {  
+    width: 100%; 
+    max-height: initial 
+}
 
 .Publication_Statistiques{
     margin-bottom: 10px;
