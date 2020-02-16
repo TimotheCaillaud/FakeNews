@@ -107,8 +107,15 @@ overflow-wrap: normal;
 
 }
 
-.ArticleImagePreview {  cursor:pointer;  max-height: 250px; overflow: hidden; }
-.ArticleImagePreview img {  width: 100%; max-height: initial }
+.ArticleImagePreview {  
+    cursor:pointer;  
+    max-height: 250px; 
+    overflow: hidden; 
+}
+.ArticleImagePreview img {  
+    width: 100%; 
+    max-height: initial 
+}
 
 .articleDescription{
     background-color: #0003;
@@ -131,7 +138,10 @@ overflow-wrap: normal;
     border-bottom: 1px solid #dee2e6;
 }
 
-.PublicationImage img {  width: 100%; max-height: initial }
+.PublicationImage img {  
+    width: 100%; 
+    max-height: initial 
+}
 
 .Publication_Statistiques{
     margin-bottom: 10px;
