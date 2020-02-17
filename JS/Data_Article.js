@@ -10,7 +10,8 @@ let Data_Article = [
         Contenu: "Wow.. North Korea is more open that I thought &#128559",
         Likes: 27,
         Comments: 10,
-        Shares: 2
+        Shares: 2,
+        Information: "Soldat Test !"
     },
     {
         Publieur: "Cynthiiia_Coeur",
@@ -19,7 +20,8 @@ let Data_Article = [
         Image: "banana_egg.jpg",
         Likes: 10,
         Comments: 4,
-        Shares: 0
+        Shares: 0,
+        Information: "Soldat Test !"
     },
 
     {
@@ -33,7 +35,8 @@ let Data_Article = [
         Url: "https://web.archive.org/web/20000831061431/http://www.mercola.com/forms/wellness_condensed.htm",
         Likes: 15,
         Comments: 1,
-        Shares: 2
+        Shares: 2,
+        Information: "Soldat Test !"
     },
 
     {
@@ -47,7 +50,8 @@ let Data_Article = [
         Url: "https://time.com/4017962/banana-nutrition",
         Likes: 11,
         Comments: 2,
-        Shares: 3
+        Shares: 3,
+        Information: "Soldat Test !"
     },
 
     {
@@ -61,7 +65,8 @@ let Data_Article = [
         Link: "Did Michelle Obama...",
         Likes: 21,
         Comments: 6,
-        Shares: 1
+        Shares: 1,
+        Information: "Soldat Test !"
 
     },
 
@@ -76,7 +81,8 @@ let Data_Article = [
         Link: "Michelle Obama Files...",
         Likes: 1,
         Comments: 0,
-        Shares: 0
+        Shares: 0,
+        Information: "Soldat Test !"
     },
 
     {
@@ -86,7 +92,8 @@ let Data_Article = [
         Image: "germanyTerroristAttack.jpg",
         Likes: 12,
         Comments: 0,
-        Shares: 1
+        Shares: 1,
+        Information: "Soldat Test !"
     },
 
     {
@@ -95,7 +102,8 @@ let Data_Article = [
         Contenu: "I just learned that my boyfriend was cheating on me for months... I feel devastated... ",
         Likes: 3,
         Comments: 76,
-        Shares: 0
+        Shares: 0,
+        Information: "Soldat Test !"
     },
 
     {
@@ -104,7 +112,8 @@ let Data_Article = [
         Contenu: "My parents just took my xbox and I cant play fortnite anymore !!  I HATE MY PARENTS !!!!! &#129324  ",
         Likes: 0,
         Comments: 0,
-        Shares: 0
+        Shares: 0,
+        Information: "Soldat Test !"
     },
 
     {
@@ -114,7 +123,8 @@ let Data_Article = [
         Image: "theRock.jpg",
         Likes: 15052,
         Comments: 4358,
-        Shares: 34578
+        Shares: 34578,
+        Information: "Soldat Test !"
     },
 
     {
@@ -123,7 +133,8 @@ let Data_Article = [
         Contenu: "Like for Qwerty Comment for Azerty ",
         Likes: 0,
         Comments: 854,
-        Shares: 3
+        Shares: 3,
+        Information: "Soldat Test !"
     },
 
     {
@@ -132,7 +143,8 @@ let Data_Article = [
         Contenu: "Putain je parle pas anglais moi je comprends rien sérieux..",
         Likes: 0,
         Comments: 0,
-        Shares: 1
+        Shares: 1,
+        Information: "Soldat Test !"
     },
 
     {
@@ -141,7 +153,8 @@ let Data_Article = [
         Contenu: "Poesy are soooooooo funny wtf !!! &#128562 &#128562 &#128562",
         Likes: 101,
         Comments: 3,
-        Shares: 2
+        Shares: 2,
+        Information: "Soldat Test !"
     },
 
     {
@@ -150,7 +163,8 @@ let Data_Article = [
         Contenu: "I want to marry Jimin from BTS.. his blue hairs are so... &#128525 &#128525 &#128525",
         Likes: 45,
         Comments: 4,
-        Shares: 0
+        Shares: 0,
+        Information: "Soldat Test !"
     },
     {
         Publieur: "Lucien_Bramart",
@@ -158,7 +172,8 @@ let Data_Article = [
         Contenu: "How is your blanquette ?",
         Likes: 153,
         Comments: 22,
-        Shares: 15
+        Shares: 15,
+        Information: "Soldat Test !"
     }
 
 
@@ -199,7 +214,7 @@ function chargementDesArticles(){
             '<div class="Article border">'+
                 '<div class="Article_Header d-flex flex-row ">'+
                     '<div id="photo'+ Data_Article[j].Publieur +'" class=" d-inline-block">'+
-                      '<img src="../ImageSources/'+ Data_Article[j].Photo +'" class="Photo_posteur" data-toggle="modal" data-target="#popUpInformation" onclick="changeInfoPopUp(Data_Article[1])"/>'+
+                      '<img src="../ImageSources/'+ Data_Article[j].Photo +'" class="Photo_posteur" data-toggle="modal" data-target="#popUpInformation" onclick="changeInfoPopUp('+ j+')"/>'+
                     '</div>'+
                     '<div class="Publieur ">'+ Data_Article[j].Publieur +
                     '</div>'+
@@ -248,13 +263,18 @@ function shuffle(array) {
 function changeInfoPopUp(ArticleNumber){
   let popUp = document.getElementById("popUpInformation");
   console.log(popUp);
+
   let photoPopUp = document.getElementById("PosteurPhoto");
   console.log(photoPopUp);
-  photoPopUp.setAttribute("src", "../ImageSources/Mario.png");
+  //let StringSourceImg = "../ImageSources/"
+  photoPopUp.setAttribute("src", "../ImageSources/"+ Data_Article[ArticleNumber].Photo);
+
   let namePopUp = document.getElementById("PosteurName");
-  namePopUp.innerHTML = "Toto";
+  namePopUp.innerHTML = Data_Article[ArticleNumber].Publieur;
   console.log(namePopUp);
+
   let infoPopUp = document.getElementById("PosteurInformations");
+  infoPopUp.innerHTML = Data_Article[ArticleNumber].Information;
   console.log(infoPopUp);
 }
 
