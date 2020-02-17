@@ -18,15 +18,6 @@
     background-color: #DDD ;
 }
 
-#PosteurPhoto{
-    height : 50px;
-    width : 50px;
-    margin-right: 15px;
-}
-#PosteurName{
-    margin-top: 8px;
-}
-
 #UserInfo{
     width: 30vw;
     height: 1000px;

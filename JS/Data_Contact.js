@@ -1,23 +1,34 @@
 let Data_Contact = [
     Contact_A = {
-        Nom: "Elle Dean",
+        Nom: "Elle Dean,Toto",
         Ref: "Conversation_A",
-        Photo: "contact_android1.png",
+        Photo: "contact_android.png",
         Echange: {
             M1: "salut",
             M2: "c'est Elle",
             N3: "salut",
-            M4: "ca va",
-            N5: "oui",
-            N6: "et toi",
-            Q7: "super, j'ai une question ... A"
-            //R3 : ["toot","dgdg","dggg"],
-        }
+            O4: "salut c'est toto",
+            M5: "ca va",
+            N6: "oui",
+            N7: "et toi",
+            // jusqu'a là, c'est les conversations pré-rempli
+            Q8: "super, j'ai une question ... A",
+            R9 : ["1 - rep correct","2 - rep fausse","3 - autre"],
+            O10 : ["1 - oui","2 - non","3 - autre"],
+            N11: "suite",
+            O12: "suite c'est toto",
+            M13: "blabla",
+            Q14: "super, j'ai une NOUVELLE question ... A",
+            R15 : ["1 - NOUVELLE rep correct ","2 - NOUVELLE rep fausse","3 - NOUVELLE autre"],
+            O16 : ["1 - NOUVELLE oui","2 - NOUVELLE non","3 - NOUVELLE autre"],
+            M17: "au revoir"
+        },
+        Etape_Conv: 0
     },
     Contact_B = {
         Nom: "Non-binaire Roux",
         Ref: "Conversation_B",
-        Photo: "contact_android2.png",
+        Photo: "contact_android.png",
         Echange: {
             M1: "salut",
             M2: "c'est Non-binaire",
@@ -25,12 +36,22 @@ let Data_Contact = [
             M4: "ca va",
             N5: "oui",
             N6: "et toi",
-            Q7: "super, j'ai une question ... B"
-        }
+            Q7: "super, j'ai une question ... B",
+            R8 : ["1 - toot","2 - dgdg","3 - dggg"],
+            O9 : ["1 - oui","2 - non","3 - non"],
+            N10: "suite",
+            O11: "suite c'est toto",
+            M12: "blabla",
+            Q13: "super, j'ai une NOUVELLE question ... B",
+            R14 : ["1 - NOUVELLE rep correct ","2 - NOUVELLE rep fausse","3 - NOUVELLE autre"],
+            O15 : ["1 - NOUVELLE oui","2 - NOUVELLE non","3 - NOUVELLE autre"],
+            M16: "au revoir"
+        },
+        Etape_Conv: 0
     },
     Contact_C = {
         Nom: "Lui Xor",
-        Photo: "contact_android3.png",
+        Photo: "contact_android.png",
         Ref: "Conversation_C",
         Echange: {
             M1: "salut",
@@ -39,10 +60,21 @@ let Data_Contact = [
             M4: "ca va",
             N5: "oui",
             N6: "et toi",
-            Q7: "super, j'ai une question ... C"
-        }
+            Q7: "super, j'ai une question ... C",
+            R8 : ["1 - rep correct ","2 - rep fausse","3 - autre"],
+            O9 : ["1 - oui","2 - non","3 - autre"],
+            N10: "suite",
+            O11: "suite c'est toto",
+            M12: "blabla",
+            Q13: "super, j'ai une NOUVELLE question ... B",
+            R14 : ["1 - NOUVELLE rep correct ","2 - NOUVELLE rep fausse","3 - NOUVELLE autre"],
+            O15 : ["1 - NOUVELLE oui","2 - NOUVELLE non","3 - NOUVELLE autre"],
+            M16: "au revoir"
+        },
+        Etape_Conv: 0
     }
 ];
+
 
 function chargementDesContacts() {
 
@@ -56,7 +88,7 @@ function chargementDesContacts() {
     for (var j = 0; j < Data_Contact.length; j++) {
         document.write(
             '<li class="nav-item d-flex flex-row">' +
-            '<img src="../imageSources/' + Data_Contact[j].Photo + '" class="Photo_posteur" />' +
+            '<img src="../ImageSources/' + Data_Contact[j].Photo + '" class="Photo_posteur" />' +
             '<a class="nav-link" data-toggle="tab" href="#' + Data_Contact[j].Ref + '">' + Data_Contact[j].Nom +
             '</a>' +
             '</li>'
@@ -96,37 +128,59 @@ function chargementDesContacts() {
 
 
         for (var key in Data_Contact[k].Echange) {
+            if(key.substr(0, 1) == 'M') {
+                document.write(
+                    '<div class="d-flex align-items-start flex-column">' +
+                    '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-secondary rounded">' + Data_Contact[k].Echange[key] +
+                    '</div>' +
+                    '</div>'
+                );
+                Data_Contact[k].Etape_Conv+=1;
+            }
+            else if(key.substr(0, 1) == 'O'){
+                document.write(
+                    '<div class="d-flex align-items-start flex-column">' +
+                    '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-success rounded">' + Data_Contact[k].Echange[key] +
+                    '</div>' +
+                    '</div>'
+                );
+                Data_Contact[k].Etape_Conv+=1;
+            }
+            else if(key.substr(0, 1) == 'N'){
+                document.write(
+                    '<div class="d-flex align-items-end flex-column">' +
+                    '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-white rounded">' + Data_Contact[k].Echange[key] +
+                    '</div>' +
+                    '</div>'
+                );
+                Data_Contact[k].Etape_Conv+=1;
+            }
+            else if(key.substr(0, 1) == 'Q'){
+                var e = Data_Contact[k].Echange[key];
+                var conv = Data_Contact[k].Ref;
+                Data_Contact[k].Etape_Conv+=1;
 
-            switch (key.substr(0, 1)) {
-                //cas message classique du contact
-                case 'M':
-                    document.write(
-                        '<div class="d-flex align-items-start flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-secondary rounded">' + Data_Contact[k].Echange[key] +
-                        '</div>' +
-                        '</div>'
+                document.getElementById("ajout_message_" + conv).innerHTML +=
+                    '<div class="d-flex align-items-start flex-column">' +
+                    '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-secondary rounded">' + e +
+                    '</div>' +
+                    '</div>';
+            }
+            else if(key.substr(0, 1) == 'R'){
+
+                var conv = Data_Contact[k].Ref;
+                Data_Contact[k].Etape_Conv+=1;
+                document.write('<div id ="choix_message_' + conv +'" class="d-flex align-items-center flex-column">');
+                for(var p = 0;p<Data_Contact[k].Echange[key].length;p++){
+                   document.write(
+                    '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-center bg-warning rounded">' + Data_Contact[k].Echange[key][p] + '</div>'
                     );
-                    break;
-                //cas message classique du joueur
-                case "N":
-                    document.write(
-                        '<div class="d-flex align-items-end flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-white rounded">' + Data_Contact[k].Echange[key] +
-                        '</div>' +
-                        '</div>'
-                    );
-                    break;
-                //cas question du contact
-                case "Q":
-                    document.write(
-                        '<div class="d-flex align-items-start flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-secondary rounded">' + Data_Contact[k].Echange[key] +
-                        '</div>' +
-                        '</div>'
-                    );
-                    //La gestion du temps devra surement etre prise en compte ici
-                    break;
-                default:
+                }
+                document.write("</div>");
+                break;
+            }
+            else{
+                break;
             }
         }
 
@@ -145,7 +199,7 @@ function chargementDesContacts() {
                     '<button class="btn btn-outline-secondary" type="button" id="button-addon2">Send</button>' +
                 '</div>' +
             '</div>' +
-        '</div>'
+        '</div>' 
     );
 
     document.write(
