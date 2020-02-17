@@ -56,18 +56,17 @@ let listOnglet = [{name:"FakeBook", url: "https://fakebook.com"}];
 
 function changeVisibility(NameDiv) {
     listOnglet.forEach(element => {
-        if (element.name == NameDiv) {
+        if (element == NameDiv) {
 
-          document.getElementById(element.name).classList.add('d-flex');
-          document.getElementById(element.name).classList.add('flex-row');
+          document.getElementById(element).classList.add('d-flex');
+          document.getElementById(element).classList.add('flex-row');
           if(element != "FakeBook"){
-            document.getElementById(element.name).classList.add('Page_Up');
+            document.getElementById(element).classList.add('Page_Up');
           }
-          document.getElementById(element.name).classList.remove('Page_Down');
-          document.getElementById(element.name+"Trigger").classList.add('active');
-          document.getElementById("urlBar").value = element.url;
-          if(document.getElementById(element.name+"Remove")){
-            document.getElementById(element.name+"Remove").src = "../ImageSources/removeMain.png";
+          document.getElementById(element).classList.remove('Page_Down');
+          document.getElementById(element+"Trigger").classList.add('active');
+          if(document.getElementById(element+"Remove")){
+            document.getElementById(element+"Remove").src = "../ImageSources/removeMain.png";
           }
 
         } else {
@@ -147,4 +146,6 @@ function addArticleWindow(articleTitle,url){
         ajout = "";
         document.getElementById('input_text').value = "";
     }
+
 };
+

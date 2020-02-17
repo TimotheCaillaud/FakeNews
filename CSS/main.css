@@ -96,8 +96,8 @@
 }
 
 .Contenu{
-overflow-wrap: normal;
-    text-overflow: ellipsis;
+    word-wrap: break-word;
+
     font-size: 1em;
     margin-left: 15px;
     margin-bottom: 15px;
@@ -109,7 +109,7 @@ overflow-wrap: normal;
 
 .ArticleImagePreview {  
     cursor:pointer;  
-    max-height: 250px; 
+    max-height: 300px; 
     overflow: hidden; 
 }
 .ArticleImagePreview img {  
@@ -117,26 +117,6 @@ overflow-wrap: normal;
     max-height: initial 
 }
 
-.articleDescription{
-    background-color: #0003;
-    cursor:pointer;
-}
-
-.articlePublisher{
-    padding-top: 10px;
-    padding-left: 20px;
-    font-size: 1.2em;
-    color: 	#BBB
-}
-
-.articleTitle{
-    padding-left: 20px;
-    padding-bottom: 15px;
-    font-size: 1.2em;
-    font-weight:bold;
-    color: white;
-    border-bottom: 1px solid #dee2e6;
-}
 
 .PublicationImage img {  
     width: 100%; 
