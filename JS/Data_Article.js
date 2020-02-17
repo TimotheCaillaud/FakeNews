@@ -1,6 +1,6 @@
 let Data_Article = [
     {
-        Publieur: "Paul ",
+        Publieur: "Paul",
         Photo: "Paul.png",
         Image: "KoreaChristianityPreview.jpg",
         Link: "Charisma Magazine",
@@ -13,7 +13,7 @@ let Data_Article = [
         Shares: 2
     },
     {
-        Publieur: "Cynthiiia <3",
+        Publieur: "Cynthiiia_Coeur",
         Photo: "Cynthia.png",
         Contenu: "OMG !!!! pls share or your loved ones risk to die &#128561 &#128561 &#128557 &#128557 &#128557 !!!! ",
         Image: "banana_egg.jpg",
@@ -23,7 +23,7 @@ let Data_Article = [
     },
 
     {
-        Publieur: "Momo ",
+        Publieur: "Momo",
         Photo: "Momo.png",
         Contenu: "Very interesting article if your looking for information for a proper diet &#129488",
         Image: "optimalWellnessCenterPreview.jpg",
@@ -37,7 +37,7 @@ let Data_Article = [
     },
 
     {
-        Publieur: "Jibé ",
+        Publieur: "Jibé",
         Photo: "Jibé.png",
         Contenu: "As a big fan of bananas, I'm happy to finnaly find answer to my questions ",
         Image: "timesBananaPreview.jpg",
@@ -90,7 +90,7 @@ let Data_Article = [
     },
 
     {
-        Publieur: "Piki chan",
+        Publieur: "Piki_chan",
         Photo: "Piki.png",
         Contenu: "I just learned that my boyfriend was cheating on me for months... I feel devastated... ",
         Likes: 3,
@@ -118,7 +118,7 @@ let Data_Article = [
     },
 
     {
-        Publieur: "Reliable Statistic Agency",
+        Publieur: "Reliable_Statistic_Agency",
         Photo: "RSA.png",
         Contenu: "Like for Qwerty Comment for Azerty ",
         Likes: 0,
@@ -153,7 +153,7 @@ let Data_Article = [
         Shares: 0
     },
     {
-        Publieur: "Lucien Bramart",
+        Publieur: "Lucien_Bramart",
         Photo: "oss117.png",
         Contenu: "How is your blanquette ?",
         Likes: 153,
@@ -169,7 +169,7 @@ function chargementDesArticles(){
 
     document.write(
         '<div id="Gauche" class=" d-inline-block"></div>'+
-        '<div id="Liste_Articles" class=" px-5 d-inline-block">'
+        '<div id="Liste_Articles" class=" px-5 d-inline-block" >'
     );
 
     shuffle(Data_Article);
@@ -198,14 +198,14 @@ function chargementDesArticles(){
             document.write(
             '<div class="Article border">'+
                 '<div class="Article_Header d-flex flex-row ">'+
-                    '<div class=" d-inline-block">'+
-                      '<img src="../ImageSources/'+ Data_Article[j].Photo +'" class="Photo_posteur" />'+
+                    '<div id="photo'+ Data_Article[j].Publieur +'" class=" d-inline-block">'+
+                      '<img src="../ImageSources/'+ Data_Article[j].Photo +'" class="Photo_posteur" data-toggle="modal" data-target="#popUpInformation" onclick="changeInfoPopUp(Data_Article[1])"/>'+
                     '</div>'+
                     '<div class="Publieur ">'+ Data_Article[j].Publieur +
                     '</div>'+
-                    '</div>'+
-                    '<div class="Contenu ">'+ Data_Article[j].Contenu +
-                    '</div>'+
+                '</div>'+
+                '<div class="Contenu ">'+ Data_Article[j].Contenu +
+                '</div>'+
                     image +
                     articleDescription +
                     '<div class= "d-flex Publication_Statistiques ">'+
@@ -244,3 +244,49 @@ function shuffle(array) {
 
   return array;
 }
+
+function changeInfoPopUp(ArticleNumber){
+  let popUp = document.getElementById("popUpInformation");
+  console.log(popUp);
+  let photoPopUp = document.getElementById("PosteurPhoto");
+  console.log(photoPopUp);
+  photoPopUp.setAttribute("src", "../ImageSources/Mario.png");
+  let namePopUp = document.getElementById("PosteurName");
+  namePopUp.innerHTML = "Toto";
+  console.log(namePopUp);
+  let infoPopUp = document.getElementById("PosteurInformations");
+  console.log(infoPopUp);
+}
+
+/*
+onscroll="scrollErase()"
+//onclick="openPopUpInfo(photo'+ Data_Article[j].Publieur +')"
+
+function openPopUpInfo(id){
+  window.setTimeout(function(){
+    let popUpInfo = document.createElement('div');
+    popUpInfo.id = "popUp";
+    popUpInfo.style.backgroundColor = "black";
+    popUpInfo.style.position = "absolute";
+    popUpInfo.style.width = "100px";
+    popUpInfo.style.height = "100px";
+    id.appendChild(popUpInfo);
+  }, 10);
+  
+}
+
+
+function scrollErase(){
+  let popUp = document.getElementById("popUp");
+  if(popUp != null){
+    popUp.remove();
+  }
+}
+
+
+document.onclick = function(){
+  let popUp = document.getElementById("popUp");
+  if(popUp != null){
+    popUp.remove();
+  }
+}*/
