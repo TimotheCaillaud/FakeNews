@@ -1,6 +1,6 @@
 let Data_Article = [
     {
-        Publieur: "Paul ",
+        Publieur: "Paul",
         Photo: "Paul.png",
         Image: "KoreaChristianityPreview.jpg",
         Link: "Charisma Magazine",
@@ -10,20 +10,22 @@ let Data_Article = [
         Contenu: "Wow.. North Korea is more open that I thought &#128559",
         Likes: 27,
         Comments: 10,
-        Shares: 2
+        Shares: 2,
+        Information: "Soldat Test !"
     },
     {
-        Publieur: "Cynthiiia <3",
+        Publieur: "Cynthiiia_Coeur",
         Photo: "Cynthia.png",
         Contenu: "OMG !!!! pls share or your loved ones risk to die &#128561 &#128561 &#128557 &#128557 &#128557 !!!! ",
         Image: "banana_egg.jpg",
         Likes: 10,
         Comments: 4,
-        Shares: 0
+        Shares: 0,
+        Information: "Soldat Test !"
     },
 
     {
-        Publieur: "Momo ",
+        Publieur: "Momo",
         Photo: "Momo.png",
         Contenu: "Very interesting article if your looking for information for a proper diet &#129488",
         Image: "optimalWellnessCenterPreview.jpg",
@@ -33,11 +35,12 @@ let Data_Article = [
         Url: "https://web.archive.org/web/20000831061431/http://www.mercola.com/forms/wellness_condensed.htm",
         Likes: 15,
         Comments: 1,
-        Shares: 2
+        Shares: 2,
+        Information: "Soldat Test !"
     },
 
     {
-        Publieur: "Jibé ",
+        Publieur: "Jibé",
         Photo: "Jibé.png",
         Contenu: "As a big fan of bananas, I'm happy to finnaly find answer to my questions ",
         Image: "timesBananaPreview.jpg",
@@ -47,7 +50,8 @@ let Data_Article = [
         Url: "https://time.com/4017962/banana-nutrition",
         Likes: 11,
         Comments: 2,
-        Shares: 3
+        Shares: 3,
+        Information: "Soldat Test !"
     },
 
     {
@@ -61,7 +65,8 @@ let Data_Article = [
         Link: "Did Michelle Obama...",
         Likes: 21,
         Comments: 6,
-        Shares: 1
+        Shares: 1,
+        Information: "Soldat Test !"
 
     },
 
@@ -76,7 +81,8 @@ let Data_Article = [
         Link: "Michelle Obama Files...",
         Likes: 1,
         Comments: 0,
-        Shares: 0
+        Shares: 0,
+        Information: "Soldat Test !"
     },
 
     {
@@ -86,16 +92,18 @@ let Data_Article = [
         Image: "germanyTerroristAttack.jpg",
         Likes: 12,
         Comments: 0,
-        Shares: 1
+        Shares: 1,
+        Information: "Soldat Test !"
     },
 
     {
-        Publieur: "Piki chan",
+        Publieur: "Piki_chan",
         Photo: "Piki.png",
         Contenu: "I just learned that my boyfriend was cheating on me for months... I feel devastated... ",
         Likes: 3,
         Comments: 76,
-        Shares: 0
+        Shares: 0,
+        Information: "Soldat Test !"
     },
 
     {
@@ -104,7 +112,8 @@ let Data_Article = [
         Contenu: "My parents just took my xbox and I cant play fortnite anymore !!  I HATE MY PARENTS !!!!! &#129324  ",
         Likes: 0,
         Comments: 0,
-        Shares: 0
+        Shares: 0,
+        Information: "Soldat Test !"
     },
 
     {
@@ -114,16 +123,18 @@ let Data_Article = [
         Image: "theRock.jpg",
         Likes: 15052,
         Comments: 4358,
-        Shares: 34578
+        Shares: 34578,
+        Information: "Soldat Test !"
     },
 
     {
-        Publieur: "Reliable Statistic Agency",
+        Publieur: "Reliable_Statistic_Agency",
         Photo: "RSA.png",
         Contenu: "Like for Qwerty Comment for Azerty ",
         Likes: 0,
         Comments: 854,
-        Shares: 3
+        Shares: 3,
+        Information: "Soldat Test !"
     },
 
     {
@@ -132,7 +143,8 @@ let Data_Article = [
         Contenu: "Putain je parle pas anglais moi je comprends rien sérieux..",
         Likes: 0,
         Comments: 0,
-        Shares: 1
+        Shares: 1,
+        Information: "Soldat Test !"
     },
 
     {
@@ -141,7 +153,8 @@ let Data_Article = [
         Contenu: "Poesy are soooooooo funny wtf !!! &#128562 &#128562 &#128562",
         Likes: 101,
         Comments: 3,
-        Shares: 2
+        Shares: 2,
+        Information: "Soldat Test !"
     },
 
     {
@@ -150,15 +163,17 @@ let Data_Article = [
         Contenu: "I want to marry Jimin from BTS.. his blue hairs are so... &#128525 &#128525 &#128525",
         Likes: 45,
         Comments: 4,
-        Shares: 0
+        Shares: 0,
+        Information: "Soldat Test !"
     },
     {
-        Publieur: "Lucien Bramart",
+        Publieur: "Lucien_Bramart",
         Photo: "oss117.png",
         Contenu: "How is your blanquette ?",
         Likes: 153,
         Comments: 22,
-        Shares: 15
+        Shares: 15,
+        Information: "Soldat Test !"
     }
 
 
@@ -169,7 +184,7 @@ function chargementDesArticles(){
 
     document.write(
         '<div id="Gauche" class=" d-inline-block"></div>'+
-        '<div id="Liste_Articles" class=" px-5 d-inline-block">'
+        '<div id="Liste_Articles" class=" px-5 d-inline-block" >'
     );
 
     shuffle(Data_Article);
@@ -198,14 +213,14 @@ function chargementDesArticles(){
             document.write(
             '<div class="Article border">'+
                 '<div class="Article_Header d-flex flex-row ">'+
-                    '<div class=" d-inline-block">'+
-                      '<img src="../ImageSources/'+ Data_Article[j].Photo +'" class="Photo_posteur" />'+
+                    '<div id="photo'+ Data_Article[j].Publieur +'" class=" d-inline-block">'+
+                      '<img src="../ImageSources/'+ Data_Article[j].Photo +'" class="Photo_posteur" data-toggle="modal" data-target="#popUpInformation" onclick="changeInfoPopUp('+ j+')"/>'+
                     '</div>'+
                     '<div class="Publieur ">'+ Data_Article[j].Publieur +
                     '</div>'+
-                    '</div>'+
-                    '<div class="Contenu ">'+ Data_Article[j].Contenu +
-                    '</div>'+
+                '</div>'+
+                '<div class="Contenu ">'+ Data_Article[j].Contenu +
+                '</div>'+
                     image +
                     articleDescription +
                     '<div class= "d-flex Publication_Statistiques ">'+
@@ -244,3 +259,54 @@ function shuffle(array) {
 
   return array;
 }
+
+function changeInfoPopUp(ArticleNumber){
+  let popUp = document.getElementById("popUpInformation");
+  console.log(popUp);
+
+  let photoPopUp = document.getElementById("PosteurPhoto");
+  console.log(photoPopUp);
+  //let StringSourceImg = "../ImageSources/"
+  photoPopUp.setAttribute("src", "../ImageSources/"+ Data_Article[ArticleNumber].Photo);
+
+  let namePopUp = document.getElementById("PosteurName");
+  namePopUp.innerHTML = Data_Article[ArticleNumber].Publieur;
+  console.log(namePopUp);
+
+  let infoPopUp = document.getElementById("PosteurInformations");
+  infoPopUp.innerHTML = Data_Article[ArticleNumber].Information;
+  console.log(infoPopUp);
+}
+
+/*
+onscroll="scrollErase()"
+//onclick="openPopUpInfo(photo'+ Data_Article[j].Publieur +')"
+
+function openPopUpInfo(id){
+  window.setTimeout(function(){
+    let popUpInfo = document.createElement('div');
+    popUpInfo.id = "popUp";
+    popUpInfo.style.backgroundColor = "black";
+    popUpInfo.style.position = "absolute";
+    popUpInfo.style.width = "100px";
+    popUpInfo.style.height = "100px";
+    id.appendChild(popUpInfo);
+  }, 10);
+  
+}
+
+
+function scrollErase(){
+  let popUp = document.getElementById("popUp");
+  if(popUp != null){
+    popUp.remove();
+  }
+}
+
+
+document.onclick = function(){
+  let popUp = document.getElementById("popUp");
+  if(popUp != null){
+    popUp.remove();
+  }
+}*/

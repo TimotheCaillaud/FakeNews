@@ -2,7 +2,7 @@ let Data_Contact = [
     Contact_A = {
         Nom: "Elle Dean",
         Ref: "Conversation_A",
-        Photo: "contact_android.png",
+        Photo: "contact_android1.png",
         Echange: {
             M1: "salut",
             M2: "c'est Elle",
@@ -17,7 +17,7 @@ let Data_Contact = [
     Contact_B = {
         Nom: "Non-binaire Roux",
         Ref: "Conversation_B",
-        Photo: "contact_android.png",
+        Photo: "contact_android2.png",
         Echange: {
             M1: "salut",
             M2: "c'est Non-binaire",
@@ -30,7 +30,7 @@ let Data_Contact = [
     },
     Contact_C = {
         Nom: "Lui Xor",
-        Photo: "contact_android.png",
+        Photo: "contact_android3.png",
         Ref: "Conversation_C",
         Echange: {
             M1: "salut",
