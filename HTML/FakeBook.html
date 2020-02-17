@@ -23,7 +23,7 @@
     <div id="En-tete">
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="height:50vb" id="Header_onglet">
         <ul id="navBar" class="navbar-nav">
-          <li class="nav-item">
+          <li class="nav-item" >
             <a id="FakeBookTrigger" class="nav-link active" onclick="changeVisibility('FakeBook');" href="#Corps">FakeBook</a>
           </li>
           <!-- <li class="nav-item">
@@ -36,16 +36,18 @@
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="margin-top:36px; height:50vb"
         id="Header_recherche">
         <ul class="navbar-nav">
-          <li class="nav-item">
+          <!--<li class="nav-item">
             <a class="nav-link" href="#">{---</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">---}</a>
-          </li>
+          </li> -->
           <li class="nav-item">
             <!-- TODO changer action -->
-            <form class="form-inline" action="/action_page.php">
-              <input class="form-control mr-sm-2" type="text" placeholder="" style="margin-left:20px;">
+            <form class="form-inline" action="/action_page.php" style=" padding-top: 4px" >
+              <input id="urlBar" class="form-control mr-sm-2" type="text" value="https://fakebook.com" placeholder="" style=" width: 1000px">
+
+
               <!--<button class="btn btn-success" type="submit">Search</button>-->
             </form>
           </li>
@@ -106,55 +108,3 @@ TODO list:
 -
 
 -->
-
-<!--    <div id="Article_Premier" class="Page_Down">
-        <div id="Gauche" class="d-inline-block"></div>
-        <div id="Liste_Articles" class="bg-warning px-5 d-inline-block">
-
-          <div id="Article_1" class="Article mx-5 my-3 bg-primary border">
-
-            <div class="Article_Header d-flex flex-row border-bottom">
-
-              <div id="Photo_1" class="d-inline-block">
-                <img src="../contact_android.png" class="Photo_posteur" />
-              </div>
-
-              <div id="Titre_1" class="Titre_Article d-inline-block">
-                LOL !! 9 Photos d'Antonin, la 11 est MDR !!
-              </div>
-            </div>
-          </div>
-          <div id="Article_2" class="Article mx-5 my-3 bg-success border">
-            <div class="Article_Header d-flex flex-row border-bottom">
-              <div id="Photo_2" class="d-inline-block">
-                <img src="../contact_android.png" class="Photo_posteur" />
-              </div>
-              <div id="Titre_2" class="Titre_Article d-inline-block">
-                Askip y'a exam demain ... t'as révisé ?
-              </div>
-            </div>
-          </div>
-          <div id="Article_3" class="Article mx-5 my-3 bg-danger border">
-            <div class="Article_Header d-flex flex-row border-bottom">
-              <div id="Photo_3" class="d-inline-block">
-                <img src="../contact_android.png" class="Photo_posteur" />
-              </div>
-              <div id="Titre_3" class="Titre_Article d-inline-block">
-                Je suis un article sans Fake News ! Trust ME !!! TRUUUUUUUST MEEEEEEE ... !!!!
-              </div>
-            </div>
-          </div>
-          <div id="Article_4" class="Article mx-5 my-3 bg-secondary border">
-            <div class="Article_Header d-flex flex-row border-bottom">
-              <div id="Photo_4" class="d-inline-block">
-                <img src="../contact_android.png" class="Photo_posteur" />
-              </div>
-              <div id="Titre_4" class="Titre_Article d-inline-block">
-                Titre Sérieux car Jeu Sérieux puisque Serious Game :)
-              </div>
-            </div>
-          </div>
-        </div>
-        <div id="Droite" class="d-inline-block">
-        </div>
-      </div> -->

@@ -52,7 +52,7 @@ function addWindows(article){
 }
 
 
-let listOnglet = ["FakeBook"];
+let listOnglet = [{name:"FakeBook", url: "https://fakebook.com"}];
 
 function changeVisibility(NameDiv) {
     listOnglet.forEach(element => {
@@ -70,32 +70,38 @@ function changeVisibility(NameDiv) {
           }
 
         } else {
-          document.getElementById(element).classList.remove('d-flex');
-          document.getElementById(element).classList.remove('flex-row');
-          document.getElementById(element).classList.remove('Page_Up');
-          document.getElementById(element).classList.add('Page_Down');
-          document.getElementById(element+"Trigger").classList.remove('active');
-          if(document.getElementById(element+"Remove")){
-            document.getElementById(element+"Remove").src = "../ImageSources/removeHidden.png";
+          document.getElementById(element.name).classList.remove('d-flex');
+          document.getElementById(element.name).classList.remove('flex-row');
+          document.getElementById(element.name).classList.remove('Page_Up');
+          document.getElementById(element.name).classList.add('Page_Down');
+          document.getElementById(element.name+"Trigger").classList.remove('active');
+          if(document.getElementById(element.name+"Remove")){
+            document.getElementById(element.name+"Remove").src = "../ImageSources/removeHidden.png";
           }
         }
     });
 }
 
 function removeTab(tabName){
+  for( var i = 0; i < listOnglet.length; i++){
+   if ( i.name === tabName) {
+     listOnglet.splice( i, 1 );
+   }
+ }
+
   listOnglet.splice( listOnglet.indexOf(tabName), 1 );
   document.getElementById(tabName +"Tab").remove();
   document.getElementById(tabName).remove();
   document.getElementById('FakeBookTrigger').click();
 }
 
-function addArticleWindow(articleTitle){
-  if(listOnglet.includes(articleTitle)){
+function addArticleWindow(articleTitle,url){
+  if(listOnglet.includes({name:articleTitle, url: url})) {
     document.getElementById(articleTitle + 'Trigger').click();
     return;
   }
 
-  listOnglet.push(articleTitle)
+  listOnglet.push({name:articleTitle, url: url})
   let navBar = document.getElementById("navBar");
   navBar.innerHTML +=
     '<li id="' + articleTitle +'Tab" class="nav-item">'+
@@ -103,13 +109,13 @@ function addArticleWindow(articleTitle){
       '<input id="' + articleTitle +'Remove" type="image" src="../ImageSources/removeMain.png"  onclick="removeTab(\'' + articleTitle + '\');" alt="Submit" width="10" height="10">' +
     '</li>'
 
-
+  console.log(articleTitle + '.png')
   let site = document.getElementById("Total");
   site.innerHTML +=
    '<div class="ArticlePage" id="' + articleTitle + '" class="Page_Up d-flex flex-row">' +
       '<img  src="../Articles/' + articleTitle + '.png"/>'+
     '</div>'
-    
+
 
   //console.log(site.innerHTML)
   document.getElementById(articleTitle + 'Trigger').click();
@@ -140,4 +146,6 @@ function addArticleWindow(articleTitle){
         ajout = "";
         document.getElementById('input_text').value = "";
     }
+
 };
+
