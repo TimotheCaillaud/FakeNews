@@ -103,8 +103,7 @@
 }
 
 .Contenu{
-overflow-wrap: normal;
-    text-overflow: ellipsis;
+    word-wrap: break-word;
     font-size: 1em;
     margin-left: 15px;
     margin-bottom: 15px;
@@ -126,6 +125,16 @@ overflow-wrap: normal;
 .articleDescription{
     background-color: #0003;
     cursor:pointer;
+}
+
+.ArticleImagePreview {  
+    cursor:pointer;  
+    max-height: 300px; 
+    overflow: hidden; 
+}
+.ArticleImagePreview img {  
+    width: 100%; 
+    max-height: initial 
 }
 
 .articlePublisher{
