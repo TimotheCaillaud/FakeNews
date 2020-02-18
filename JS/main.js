@@ -205,6 +205,7 @@ let listOnglet = [{name:"FakeBook", url: "https://fakebook.com"}];
 
 function changeVisibility(NameDiv) {
     listOnglet.forEach(element => {
+
         if (element.name == NameDiv) {
 
           document.getElementById(element.name).classList.add('d-flex');
