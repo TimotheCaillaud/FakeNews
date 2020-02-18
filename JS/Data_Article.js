@@ -213,7 +213,7 @@ function chargementDesArticles(){
             '<div class="Article border">'+
                 '<div class="Article_Header d-flex flex-row ">'+
                     '<div class=" d-inline-block">'+
-                      '<img src="../ImageSources/'+ Data_Article[j].Photo +'" class="Photo_posteur" />'+
+                     '<img src="../ImageSources/'+ Data_Article[j].Photo +'" class="Photo_posteur" data-toggle="modal" data-target="#popUpInformation" onclick="changeInfoPopUp('+ j+')"/>'+
                     '</div>'+
                     '<div class="Publieur ">'+ Data_Article[j].Publieur +
                     '</div>'+
