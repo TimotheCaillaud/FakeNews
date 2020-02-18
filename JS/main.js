@@ -1,28 +1,177 @@
 document.getElementById("button-addon2").onclick = function () {
+  console.log("test");
+  var tmp = $('.nav-tabs .active').text();
+  var conv = "";
+  var numConv = 0;
 
-    var tmp = $('.nav-tabs .active').text();
-    var conv = "";
+  if (tmp == "") {
+      tmp = Data_Contact[0].Nom;
+  }
+  for (var j = 0; j < Data_Contact.length; j++) {
+      if (Data_Contact[j].Nom == tmp) {
+          conv = Data_Contact[j].Ref;
+          numConv = j;
+      }
+  }
 
-    if (tmp == "") {
-        tmp = Data_Contact[0].Nom;
-    }
-    for (var j = 0; j < Data_Contact.length; j++) {
-        if (Data_Contact[j].Nom == tmp) {
-            conv = Data_Contact[j].Ref;
-        }
-    }
+  var ajout = document.getElementById('input_text').value;
+ 
 
-    var ajout = document.getElementById('input_text').value;
+  responseOfContacts(ajout, numConv,conv);
 
-    if (ajout != "") {
-        document.getElementById("ajout_message_" + conv).innerHTML +=
-            '<div class="d-flex align-items-end flex-column"><div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-white rounded">' + ajout + '</div></div>';
-    }
+  ajout = "";
+  document.getElementById('input_text').value = "";
 
-    ajout = "";
-    document.getElementById('input_text').value = "";
+  
 };
 
+document.onkeyup = function(){
+  console.log("1");
+  if(event.key == "Enter" && (document.activeElement === document.getElementById('input_text'))){
+    console.log("2");
+      var tmp = $('.nav-tabs .active').text();
+      var conv = "";
+      var numConv = 0;
+
+      if (tmp == "") {
+          tmp = Data_Contact[0].Nom;
+      }
+      for (var j = 0; j < Data_Contact.length; j++) {
+          if (Data_Contact[j].Nom == tmp) {
+              conv = Data_Contact[j].Ref;
+              numConv = j;
+          }
+      }
+
+      var ajout = document.getElementById('input_text').value;
+
+      console.log(Data_Contact[numConv].Etape_Conv);
+      console.log(Object.keys(Data_Contact[numConv].Echange).length);
+
+      console.log("test");
+      responseOfContacts(ajout, numConv,conv);
+
+      console.log("test2");
+      ajout = "";
+      document.getElementById('input_text').value = "";
+
+  }
+};
+
+function responseOfContacts(rep,numConv,conv){
+
+  
+  if(Data_Contact[numConv].Etape_Conv < Object.keys(Data_Contact[numConv].Echange).length){
+      //le scenario n'est pas terminé avec ce contact
+      var etape = "R"+Data_Contact[numConv].Etape_Conv;
+      var etapeSuivante = "O"+ (Data_Contact[numConv].Etape_Conv+1) ;
+      var reponseTess = "Je n'ai pas compris, peux tu repeter";
+      for(var x = 0;x<Data_Contact[numConv].Echange[etape].length; x++){
+          if( rep == Data_Contact[numConv].Echange[etape][x].substr(0,1)){
+              reponseTess = Data_Contact[numConv].Echange[etapeSuivante][x].substr(4);
+              rep = Data_Contact[numConv].Echange[etape][x].substr(4);
+          }
+      }
+      
+      //reponse de l'utilisateur
+      if (rep != "") {
+          document.getElementById("ajout_message_" + conv).innerHTML +=
+              '<div class="d-flex align-items-end flex-column"><div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-white rounded">' + rep + '</div></div>';
+      }
+
+      //reponse de Tess
+      document.getElementById("ajout_message_" + conv).innerHTML +=
+      '<div class="d-flex align-items-start flex-column"><div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-success rounded">' + reponseTess + '</div></div>';
+
+      if(reponseTess != "Je n'ai pas compris, peux tu repeter"){
+          var elemAEnlever = "choix_message_"+Data_Contact[numConv].Ref;
+          console.log(elemAEnlever);
+          var child = document.getElementById("choix_message_"+Data_Contact[numConv].Ref);
+          child.parentNode.removeChild(child);
+
+          //passage à l'étape suivante
+          Data_Contact[numConv].Etape_Conv +=1;
+          affichageMessageDeContexte(numConv);
+      } 
+  }
+  else{
+      //Le scenario est terminé avec ce contact
+      if (rep != "") {
+          document.getElementById("ajout_message_" + conv).innerHTML +=
+              '<div class="d-flex align-items-end flex-column"><div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-white rounded">' + rep + '</div></div>';
+      }
+  }
+  
+
+
+}
+
+
+function affichageMessageDeContexte(numConv){
+  
+  for (var key in Data_Contact[numConv].Echange) {
+      if(parseInt(key.substr(1))>Data_Contact[numConv].Etape_Conv){
+          
+          var e = Data_Contact[numConv].Echange[key];
+          var conv = Data_Contact[numConv].Ref;
+
+          if(key.substr(0, 1) == 'M') {
+              document.getElementById("ajout_message_" + conv).innerHTML +=
+                  '<div class="d-flex align-items-start flex-column">' +
+                  '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-secondary rounded">' + Data_Contact[numConv].Echange[key] +
+                  '</div>' +
+                  '</div>'
+              ;
+              Data_Contact[numConv].Etape_Conv+=1;
+          }
+          else if(key.substr(0, 1) == 'O'){
+              document.getElementById("ajout_message_" + conv).innerHTML +=
+                  '<div class="d-flex align-items-start flex-column">' +
+                  '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-success rounded">' + Data_Contact[numConv].Echange[key] +
+                  '</div>' +
+                  '</div>'
+              ;
+              Data_Contact[numConv].Etape_Conv+=1;
+          }
+          else if(key.substr(0, 1) == 'N'){
+              document.getElementById("ajout_message_" + conv).innerHTML +=
+                  '<div class="d-flex align-items-end flex-column">' +
+                  '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-white rounded">' + Data_Contact[numConv].Echange[key] +
+                  '</div>' +
+                  '</div>'
+              ;
+              Data_Contact[numConv].Etape_Conv+=1;
+          }
+          else if(key.substr(0, 1) == 'Q'){
+              Data_Contact[numConv].Etape_Conv+=1;
+  
+              document.getElementById("ajout_message_" + conv).innerHTML +=
+                  '<div class="d-flex align-items-start flex-column">' +
+                  '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-secondary rounded">' + e +
+                  '</div>' +
+                  '</div>';
+          }
+          else if(key.substr(0, 1) == 'R'){
+  
+            var conv = Data_Contact[numConv].Ref;
+            Data_Contact[numConv].Etape_Conv+=1;
+            let str = "";
+            for(var p = 0;p<Data_Contact[numConv].Echange[key].length;p++){
+              str +=
+              '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-center bg-warning rounded">' + Data_Contact[numConv].Echange[key][p] + '</div>'
+              ;
+            }
+            document.getElementById("ajout_message_" + conv).innerHTML += '<div id ="choix_message_' + conv +'" class="d-flex align-items-end flex-column">' + str ;
+
+            
+            break;
+        }
+        else{
+            break;
+        }
+      }
+  }
+}
 
 function addWindows(article){
   document.getElementById("button-addon2").onclick = function () {
@@ -123,29 +272,3 @@ function addArticleWindow(articleTitle,url){
   document.getElementById(articleTitle + 'Trigger').click();
 
   }
-
-  document.onkeyup = function(){
-    if(event.key == "Enter" && (document.activeElement === document.getElementById('input_text'))){
-        var tmp = $('.nav-tabs .active').text();
-        var conv = "";
-
-        if (tmp == "") {
-            tmp = Data_Contact[0].Nom;
-        }
-        for (var j = 0; j < Data_Contact.length; j++) {
-            if (Data_Contact[j].Nom == tmp) {
-                conv = Data_Contact[j].Ref;
-            }
-        }
-
-        var ajout = document.getElementById('input_text').value;
-
-        if (ajout != "") {
-            document.getElementById("ajout_message_" + conv).innerHTML +=
-                '<div class="d-flex align-items-end flex-column"><div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-white rounded">' + ajout + '</div></div>';
-        }
-
-        ajout = "";
-        document.getElementById('input_text').value = "";
-    }
-};

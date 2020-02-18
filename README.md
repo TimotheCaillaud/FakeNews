@@ -7,16 +7,15 @@ You can access the app here : <a href="https://chipolathug.github.io/FakeNews/HT
 
 TODO :
 
-- Annulé ~~Retour en arrière ou en avant~~
+- Retour en arrière ou en avant
 
-- ~~Ouvrir un article~~
+- Ouvrir un article
 
 - Création d'autres pages (fausse recherche de photo)
 
-- ~~Ouvrir description de celui qui a posté l'article~~
-Ajouté des informations
+- Ouvrir description de celui qui a posté l'article
 
-- ~~"Enter" pour envoyer un message~~
+- "Enter" pour envoyer un message
 
 - Masquer les barres de scroll si possible
 
@@ -26,6 +25,6 @@ Ajouté des informations
 
 - Gérer la distinction entre réponse fermé et ouverte
 
-- ~~Creation pop-up explicatif~~
+- Creation pop-up explicatif
 
 - ~~Message envoyé du bon côté~~
