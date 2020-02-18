@@ -1,6 +1,6 @@
 let Data_Article = [
     {
-        Publieur: "Paul ",
+        Publieur: "Paul",
         Photo: "Paul.png",
         Image: "KoreaChristianityPreview.jpg",
         Link: "Charisma Magazine",
@@ -10,20 +10,22 @@ let Data_Article = [
         Contenu: "Wow.. North Korea is more open that I thought &#128559",
         Likes: 27,
         Comments: 10,
-        Shares: 2
+        Shares: 2,
+        Information: "Salut Paul !"
     },
     {
-        Publieur: "Cynthiiia <3",
+        Publieur: "Cynthiiia Coeur",
         Photo: "Cynthia.png",
         Contenu: "OMG !!!! pls share or your loved ones risk to die &#128561 &#128561 &#128557 &#128557 &#128557 !!!! ",
         Image: "banana_egg.jpg",
         Likes: 10,
         Comments: 4,
-        Shares: 0
+        Shares: 0,
+        Information: "Salut Paul !"
     },
 
     {
-        Publieur: "Momo ",
+        Publieur: "Momo",
         Photo: "Momo.png",
         Contenu: "Very interesting article if your looking for information for a proper diet &#129488",
         Image: "optimalWellnessCenterPreview.jpg",
@@ -33,11 +35,12 @@ let Data_Article = [
         Url: "https://web.archive.org/web/20000831061431/http://www.mercola.com/forms/wellness_condensed.htm",
         Likes: 15,
         Comments: 1,
-        Shares: 2
+        Shares: 2,
+        Information: "Salut Paul !"
     },
 
     {
-        Publieur: "Jibé ",
+        Publieur: "Jibé",
         Photo: "Jibé.png",
         Contenu: "As a big fan of bananas, I'm happy to finnaly find answer to my questions ",
         Image: "timesBananaPreview.jpg",
@@ -47,7 +50,8 @@ let Data_Article = [
         Url: "https://time.com/4017962/banana-nutrition",
         Likes: 11,
         Comments: 2,
-        Shares: 3
+        Shares: 3,
+        Information: "Salut Paul !"
     },
 
     {
@@ -61,8 +65,8 @@ let Data_Article = [
         Link: "Did Michelle Obama...",
         Likes: 21,
         Comments: 6,
-        Shares: 1
-
+        Shares: 1,
+        Information: "Salut Paul !"
     },
 
     {
@@ -76,7 +80,8 @@ let Data_Article = [
         Link: "Michelle Obama Files...",
         Likes: 1,
         Comments: 0,
-        Shares: 0
+        Shares: 0,
+        Information: "Salut Paul !"
     },
 
     {
@@ -86,7 +91,8 @@ let Data_Article = [
         Image: "germanyTerroristAttack.jpg",
         Likes: 12,
         Comments: 0,
-        Shares: 1
+        Shares: 1,
+        Information: "Salut Paul !"
     },
 
     {
@@ -95,7 +101,8 @@ let Data_Article = [
         Contenu: "I just learned that my boyfriend was cheating on me for months... I feel devastated... ",
         Likes: 3,
         Comments: 76,
-        Shares: 0
+        Shares: 0,
+        Information: "Salut Paul !"
     },
 
     {
@@ -104,7 +111,8 @@ let Data_Article = [
         Contenu: "My parents just took my xbox and I cant play fortnite anymore !!  I HATE MY PARENTS !!!!! &#129324  ",
         Likes: 0,
         Comments: 0,
-        Shares: 0
+        Shares: 0,
+        Information: "Salut Paul !"
     },
 
     {
@@ -114,7 +122,8 @@ let Data_Article = [
         Image: "theRock.jpg",
         Likes: 15052,
         Comments: 4358,
-        Shares: 34578
+        Shares: 34578,
+        Information: "Salut Paul !"
     },
 
     {
@@ -123,7 +132,8 @@ let Data_Article = [
         Contenu: "Like for Qwerty Comment for Azerty ",
         Likes: 0,
         Comments: 854,
-        Shares: 3
+        Shares: 3,
+        Information: "Salut Paul !"
     },
 
     {
@@ -132,7 +142,8 @@ let Data_Article = [
         Contenu: "Putain je parle pas anglais moi je comprends rien sérieux..",
         Likes: 0,
         Comments: 0,
-        Shares: 1
+        Shares: 1,
+        Information: "Salut Paul !"
     },
 
     {
@@ -141,7 +152,8 @@ let Data_Article = [
         Contenu: "Poesy are soooooooo funny wtf !!! &#128562 &#128562 &#128562",
         Likes: 101,
         Comments: 3,
-        Shares: 2
+        Shares: 2,
+        Information: "Salut Paul !"
     },
 
     {
@@ -150,7 +162,8 @@ let Data_Article = [
         Contenu: "I want to marry Jimin from BTS.. his blue hairs are so... &#128525 &#128525 &#128525",
         Likes: 45,
         Comments: 4,
-        Shares: 0
+        Shares: 0,
+        Information: "Salut Paul !"
     },
     {
         Publieur: "Lucien Bramart",
@@ -158,7 +171,8 @@ let Data_Article = [
         Contenu: "How is your blanquette ?",
         Likes: 153,
         Comments: 22,
-        Shares: 15
+        Shares: 15,
+        Information: "Salut Paul !"
     }
 
 
@@ -243,4 +257,22 @@ function shuffle(array) {
   }
 
   return array;
+}
+
+function changeInfoPopUp(ArticleNumber){
+  let popUp = document.getElementById("popUpInformation");
+  console.log(popUp);
+
+  let photoPopUp = document.getElementById("PosteurPhoto");
+  console.log(photoPopUp);
+  //let StringSourceImg = "../ImageSources/"
+  photoPopUp.setAttribute("src", "../ImageSources/"+ Data_Article[ArticleNumber].Photo);
+
+  let namePopUp = document.getElementById("PosteurName");
+  namePopUp.innerHTML = Data_Article[ArticleNumber].Publieur;
+  console.log(namePopUp);
+
+  let infoPopUp = document.getElementById("PosteurInformations");
+  infoPopUp.innerHTML = Data_Article[ArticleNumber].Information;
+  console.log(infoPopUp);
 }
