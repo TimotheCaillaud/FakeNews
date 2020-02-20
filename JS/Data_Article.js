@@ -15,7 +15,7 @@ let Data_Article = [
     },
     {
         Publieur: "Cynthiiia Coeur",
-        Photo: "Cynthia.png",
+        Photo: "cynthia.png",
         Contenu: "OMG !!!! pls share or your loved ones risk to die &#128561 &#128561 &#128557 &#128557 &#128557 !!!! ",
         Image: "banana_egg.jpg",
         Likes: 10,
