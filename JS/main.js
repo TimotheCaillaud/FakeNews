@@ -1,4 +1,4 @@
-document.getElementById("button-addon2").onclick = function () {
+let sendListener = function() {
   console.log("test");
   var tmp = $('.nav-tabs .active').text();
   var conv = "";
@@ -15,15 +15,15 @@ document.getElementById("button-addon2").onclick = function () {
   }
 
   var ajout = document.getElementById('input_text').value;
- 
+
 
   responseOfContacts(ajout, numConv,conv);
 
   ajout = "";
   document.getElementById('input_text').value = "";
+}
 
-  
-};
+document.getElementById("button-addon2").onclick = sendListener;
 
 document.onkeyup = function(){
   console.log("1");
@@ -60,7 +60,7 @@ document.onkeyup = function(){
 
 function responseOfContacts(rep,numConv,conv){
 
-  
+
   if(Data_Contact[numConv].Etape_Conv < Object.keys(Data_Contact[numConv].Echange).length){
       //le scenario n'est pas terminé avec ce contact
       var etape = "R"+Data_Contact[numConv].Etape_Conv;
@@ -72,7 +72,7 @@ function responseOfContacts(rep,numConv,conv){
               rep = Data_Contact[numConv].Echange[etape][x].substr(4);
           }
       }
-      
+
       //reponse de l'utilisateur
       if (rep != "") {
           document.getElementById("ajout_message_" + conv).innerHTML +=
@@ -92,7 +92,7 @@ function responseOfContacts(rep,numConv,conv){
           //passage à l'étape suivante
           Data_Contact[numConv].Etape_Conv +=1;
           affichageMessageDeContexte(numConv);
-      } 
+      }
   }
   else{
       //Le scenario est terminé avec ce contact
@@ -101,17 +101,17 @@ function responseOfContacts(rep,numConv,conv){
               '<div class="d-flex align-items-end flex-column"><div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-white rounded">' + rep + '</div></div>';
       }
   }
-  
+
 
 
 }
 
 
 function affichageMessageDeContexte(numConv){
-  
+
   for (var key in Data_Contact[numConv].Echange) {
       if(parseInt(key.substr(1))>Data_Contact[numConv].Etape_Conv){
-          
+
           var e = Data_Contact[numConv].Echange[key];
           var conv = Data_Contact[numConv].Ref;
 
@@ -144,7 +144,7 @@ function affichageMessageDeContexte(numConv){
           }
           else if(key.substr(0, 1) == 'Q'){
               Data_Contact[numConv].Etape_Conv+=1;
-  
+
               document.getElementById("ajout_message_" + conv).innerHTML +=
                   '<div class="d-flex align-items-start flex-column">' +
                   '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-secondary rounded">' + e +
@@ -152,7 +152,7 @@ function affichageMessageDeContexte(numConv){
                   '</div>';
           }
           else if(key.substr(0, 1) == 'R'){
-  
+
             var conv = Data_Contact[numConv].Ref;
             Data_Contact[numConv].Etape_Conv+=1;
             let str = "";
@@ -163,7 +163,7 @@ function affichageMessageDeContexte(numConv){
             }
             document.getElementById("ajout_message_" + conv).innerHTML += '<div id ="choix_message_' + conv +'" class="d-flex align-items-end flex-column">' + str ;
 
-            
+
             break;
         }
         else{
@@ -230,7 +230,13 @@ function changeVisibility(NameDiv) {
             document.getElementById(element.name+"Remove").src = "../ImageSources/removeHidden.png";
           }
         }
+
+        if(element.name == "FakeBook"){
+          document.getElementById("button-addon2").onclick = sendListener;
+        }
     });
+
+
 }
 
 function removeTab(tabName){

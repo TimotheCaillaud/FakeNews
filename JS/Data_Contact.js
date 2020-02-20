@@ -199,7 +199,7 @@ function chargementDesContacts() {
                     '<button class="btn btn-outline-secondary" type="button" id="button-addon2">Send</button>' +
                 '</div>' +
             '</div>' +
-        '</div>' 
+        '</div>'
     );
 
     document.write(
