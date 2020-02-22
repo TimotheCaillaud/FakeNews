@@ -79,7 +79,7 @@ let Data_Contact = [
 function chargementDesContacts() {
 
     document.write(
-        '<div id="Messagerie" class="bg-success d-inline-block">' +
+        '<div id="Messagerie" class="d-inline-block">' +
 
         '<div id="Liste_Contact">' +
         '<ul class="nav nav-tabs flex-column">'
@@ -102,7 +102,7 @@ function chargementDesContacts() {
 
     document.write(
         '<div id="Vide_Messagerie"></div>' +
-        '<div id="Echange_Contact" class="tab-content bg-danger">'
+        '<div id="Echange_Contact" class="tab-content ">'
     );
 
     for (var k = 0; k < Data_Contact.length; k++) {
