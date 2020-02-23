@@ -47,9 +47,10 @@ let Data_Contact = [
             M23: "Wow, it makes me feel bad to share that much fake news to you.. Even more than the Obamas divorce &#128533",
             M24: "Have you seen it Alexis ?",
 
-            R25: ["1 - Yes I saw it, that's sad for them! ", "2 - I think you get trap again by a fake news"],
+            R25: ["1 - Yes I saw it, that's sad for them! ", 
+                "2 - I think you get trap again by a fake news"],
 
-            M26: ["1 - Nooo ! I was testing you &#128517, the article shared by Rami that you maybe saw is fake, actually that's from a forum, everyone can write the article he wants, so that's deffinitely not reliable as there is no external sources. In addition it uses a catchy title, so you should have mistrust it even more? Everything is well explained in the article of Snopes, that's a website specialised in fake news debunking, it's interesting to check sometimes ",
+            O26: ["1 - Nooo ! I was testing you &#128517, the article shared by Rami that you maybe saw is fake, actually that's from a forum, everyone can write the article he wants, so that's deffinitely not reliable as there is no external sources. In addition it uses a catchy title, so you should have mistrust it even more? Everything is well explained in the article of Snopes, that's a website specialised in fake news debunking, it's interesting to check sometimes ",
                 "2 - Yes you right, for this one I was testing you &#128517, I wanted to know if you would trust the article shared by Rami, I saw quickly that its from a forum, everyone can write the article he wants, so that's deffinitely not reliable as there is no external sources. In addition it uses a catchy title, so I directly mistrusted it even more. Everything is well explained in the article of Snopes, that's a website specialised in fake news debunking, it's interesting to check sometimes "],
 
 
@@ -129,7 +130,7 @@ async function chargementDesContacts() {
                 '<div id="' + Data_Contact[k].Ref + '" class="Conversation tab-pane active text-center">' +
                 '<div class="Correspondant">' + Data_Contact[k].Nom +
                 '</div>' +
-                '<div class="Echange bg-primary">' +
+                '<div id="scroller1" class="Echange bg-primary">' +
                 '<div id ="ajout_message_' + Data_Contact[k].Ref + '" class="ajout-message p-2 d-inline-flex flex-column bd-highlight">'
             );
         }
@@ -149,7 +150,7 @@ async function chargementDesContacts() {
                 if (key.substr(0, 1) == 'M') {
                     document.write(
                         '<div class="d-flex align-items-start flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-secondary rounded">' + Data_Contact[k].Echange[key] +
+                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-secondary rounded">' + Data_Contact[k].Echange[key] +
                         '</div>' +
                         '</div>'
                     );
@@ -158,7 +159,7 @@ async function chargementDesContacts() {
                 else if (key.substr(0, 1) == 'O') {
                     document.write(
                         '<div class="d-flex align-items-start flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-success rounded">' + Data_Contact[k].Echange[key] +
+                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-success rounded">' + Data_Contact[k].Echange[key] +
                         '</div>' +
                         '</div>'
                     );
@@ -167,7 +168,7 @@ async function chargementDesContacts() {
                 else if (key.substr(0, 1) == 'N') {
                     document.write(
                         '<div class="d-flex align-items-end flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-white rounded">' + Data_Contact[k].Echange[key] +
+                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-white rounded">' + Data_Contact[k].Echange[key] +
                         '</div>' +
                         '</div>'
                     );
@@ -180,7 +181,7 @@ async function chargementDesContacts() {
 
                     document.write(
                         '<div class="d-flex align-items-start flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-secondary rounded">' + e +
+                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-secondary rounded">' + e +
                         '</div>' +
                         '</div>'
                     );
@@ -241,7 +242,7 @@ async function chargementDesContacts() {
         if (key.substr(0, 1) == 'M') {
             document.getElementById(id).innerHTML +=
                 '<div class="d-flex align-items-start flex-column">' +
-                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-secondary rounded">' + Data_Contact[k].Echange[key] +
+                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-secondary rounded">' + Data_Contact[k].Echange[key] +
                 '</div>' +
                 '</div>'
 
@@ -250,7 +251,7 @@ async function chargementDesContacts() {
         else if (key.substr(0, 1) == 'O') {
             document.getElementById(id).innerHTML +=
                 '<div class="d-flex align-items-start flex-column">' +
-                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-success rounded">' + Data_Contact[k].Echange[key] +
+                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-success rounded">' + Data_Contact[k].Echange[key] +
                 '</div>' +
                 '</div>'
 
@@ -259,7 +260,7 @@ async function chargementDesContacts() {
         else if (key.substr(0, 1) == 'N') {
             document.getElementById(id).innerHTML +=
                 '<div class="d-flex align-items-end flex-column">' +
-                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-white rounded">' + Data_Contact[k].Echange[key] +
+                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-white rounded">' + Data_Contact[k].Echange[key] +
                 '</div>' +
                 '</div>'
 
@@ -272,22 +273,24 @@ async function chargementDesContacts() {
 
             document.getElementById("ajout_message_" + conv).innerHTML +=
                 '<div class="d-flex align-items-start flex-column">' +
-                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-secondary rounded">' + e +
+                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-secondary rounded">' + e +
                 '</div>' +
                 '</div>';
         }
-        else if (key.substr(0, 1) == 'R') {
+        else if(key.substr(0, 1) == 'R'){
 
             var conv = Data_Contact[k].Ref;
-            Data_Contact[k].Etape_Conv += 1;
-            document.getElementById(id).innerHTML += '<div id ="choix_message_' + conv + '" class="d-flex align-items-center flex-column">';
-            for (var p = 0; p < Data_Contact[k].Echange[key].length; p++) {
-                document.getElementById(id).innerHTML +=
-                    '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-center bg-warning rounded">' + Data_Contact[k].Echange[key][p] + '</div>'
-
-            }
-
-            document.getElementById(id).innerHTML += "</div>";
+            Data_Contact[k].Etape_Conv+=1;
+            //document.getElementById(id).innerHTML += '<div id ="choixmessage' + conv +'" class="d-flex align-items-center flex-column">';
+            var mess = '<div id ="choix_message_' + conv +'" class="d-flex align-items-center flex-column">';
+            for(var p = 0;p<Data_Contact[k].Echange[key].length;p++){
+               //document.getElementById(id).innerHTML +=
+               // '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-center bg-warning rounded">' + Data_Contact[k].Echange[key][p] + '</div>'
+              mess+='<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-center bg-warning rounded">' + Data_Contact[k].Echange[key][p] + '</div>';
+              }
+             mess+="</div>";
+             document.getElementById(id).innerHTML += mess;
+            //document.getElementById(id).innerHTML +="</div>";
             break;
         } else {
             break;
