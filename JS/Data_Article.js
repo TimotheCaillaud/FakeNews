@@ -212,7 +212,7 @@ function chargementDesArticles() {
           '<img class="ArticleImagePreview" src="../ImageSources/' + Data_Article[j].Image + '" />' +
           '</div>';
         //onclick="addArticleWindow(\'' + Data_Article[j].Link + '\',\'' + Data_Article[j].Url + '\');"
-        articleDescription = '<div class="articleDescription" onclick="addArticleWindow(\'' + Data_Article[j].Link + '\');">' +
+        articleDescription = '<div class="articleDescription" onclick="addArticleWindow(\'' + Data_Article[j].Link + '\',\'' + Data_Article[j].Url + '\');">' +
           '<div class="articlePublisher">' + Data_Article[j].ArticlePublisher + '</div>' +
           '<div class="articleTitle">' + Data_Article[j].ArticleTitle + '</div>' +
           '</div>';
