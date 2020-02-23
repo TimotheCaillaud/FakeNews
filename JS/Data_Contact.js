@@ -129,7 +129,7 @@ async function chargementDesContacts() {
                 '<div id="' + Data_Contact[k].Ref + '" class="Conversation tab-pane active text-center">' +
                 '<div class="Correspondant">' + Data_Contact[k].Nom +
                 '</div>' +
-                '<div class="Echange bg-primary">' +
+                '<div id="scroller1" class="Echange bg-primary">' +
                 '<div id ="ajout_message_'+Data_Contact[k].Ref+'" class="ajout-message p-2 d-inline-flex flex-column bd-highlight">'
             );
         }
@@ -258,7 +258,7 @@ async function chargementDesContacts() {
           }
           else if(key.substr(0, 1) == 'N'){
               document.getElementById(id).innerHTML +=
-                  '<div class="d-flex align-items-end flex-column">' +
+                  '<div class="d-flex align-items-center flex-column">' +
                   '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-white rounded">' + Data_Contact[k].Echange[key] +
                   '</div>' +
                   '</div>'

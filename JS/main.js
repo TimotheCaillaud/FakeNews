@@ -103,7 +103,8 @@ function responseOfContacts(rep,numConv,conv){
       }
   }
 
-
+  var objDiv = document.getElementById("scroller1");
+  objDiv.scrollTop = objDiv.scrollHeight;
 
 }
 
@@ -176,7 +177,11 @@ async function affichageMessageDeContexte(numConv){
             break;
         }
       }
+      
+  var objDiv = document.getElementById("scroller1");
+  objDiv.scrollTop = objDiv.scrollHeight;
   }
+
 }
 
 function addWindows(article){
