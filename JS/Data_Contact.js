@@ -186,17 +186,6 @@ async function chargementDesContacts() {
                     );
                     Data_Contact[k].Etape_Conv += 1;
                 }
-                else if (key.substr(0, 1) == 'Q') {
-                    var e = Data_Contact[k].Echange[key];
-                    var conv = Data_Contact[k].Ref;
-                    Data_Contact[k].Etape_Conv += 1;
-                    document.write(
-                        '<div class="d-flex align-items-start flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left text-white bg-secondary rounded">' + e +
-                        '</div>' +
-                        '</div>'
-                    );
-                }
                 else if (key.substr(0, 1) == 'R') {
                     var conv = Data_Contact[k].Ref;
                     Data_Contact[k].Etape_Conv += 1;
@@ -275,16 +264,6 @@ async function chargementDesContacts() {
                 '</div>' +
                 '</div>'
             Data_Contact[k].Etape_Conv += 1;
-        }
-        else if (key.substr(0, 1) == 'Q') {
-            var e = Data_Contact[k].Echange[key];
-            var conv = Data_Contact[k].Ref;
-            Data_Contact[k].Etape_Conv += 1;
-            document.getElementById("ajout_message_" + conv).innerHTML +=
-                '<div class="d-flex align-items-start flex-column">' +
-                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left text-white bg-secondary rounded">' + e +
-                '</div>' +
-                '</div>';
         }
         else if(key.substr(0, 1) == 'R'){
             var conv = Data_Contact[k].Ref;

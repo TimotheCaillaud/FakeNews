@@ -134,14 +134,6 @@ async function affichageMessageDeContexte(numConv) {
           ;
         Data_Contact[numConv].Etape_Conv += 1;
       }
-      else if (key.substr(0, 1) == 'Q') {
-        Data_Contact[numConv].Etape_Conv += 1;
-        document.getElementById("ajout_message_" + conv).innerHTML +=
-          '<div class="d-flex align-items-start flex-column">' +
-          '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-secondary rounded">' + e +
-          '</div>' +
-          '</div>';
-      }
       else if (key.substr(0, 1) == 'R') {
         var conv = Data_Contact[numConv].Ref;
         Data_Contact[numConv].Etape_Conv += 1;
