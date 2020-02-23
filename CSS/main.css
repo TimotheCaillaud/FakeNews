@@ -203,10 +203,7 @@ body {
 
 .Text_Conv{
     font-size: 1rem;
-}
-
-.Echange div{
-    flex-wrap: wrap;
+    max-width: 80%;
 }
 
 .Zone_de_saisie{

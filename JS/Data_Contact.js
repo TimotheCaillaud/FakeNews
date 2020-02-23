@@ -50,7 +50,7 @@ let Data_Contact = [
             R25: ["1 - Yes I saw it, that's sad for them! ", 
                 "2 - I think you get trap again by a fake news"],
 
-            M26: ["1 - Nooo ! I was testing you &#128517, the article shared by Rami that you maybe saw is fake, actually that's from a forum, everyone can write the article he wants, so that's deffinitely not reliable as there is no external sources. In addition it uses a catchy title, so you should have mistrust it even more? Everything is well explained in the article of Snopes, that's a website specialised in fake news debunking, it's interesting to check sometimes ",
+            O26: ["1 - Nooo ! I was testing you &#128517, the article shared by Rami that you maybe saw is fake, actually that's from a forum, everyone can write the article he wants, so that's deffinitely not reliable as there is no external sources. In addition it uses a catchy title, so you should have mistrust it even more? Everything is well explained in the article of Snopes, that's a website specialised in fake news debunking, it's interesting to check sometimes ",
                 "2 - Yes you right, for this one I was testing you &#128517, I wanted to know if you would trust the article shared by Rami, I saw quickly that its from a forum, everyone can write the article he wants, so that's deffinitely not reliable as there is no external sources. In addition it uses a catchy title, so I directly mistrusted it even more. Everything is well explained in the article of Snopes, that's a website specialised in fake news debunking, it's interesting to check sometimes "],
 
 
