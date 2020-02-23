@@ -12,22 +12,17 @@ let sendListener = function () {
       numConv = j;
     }
   }
-
   var ajout = document.getElementById('input_text').value;
-
-
   responseOfContacts(ajout, numConv, conv);
-
   ajout = "";
   document.getElementById('input_text').value = "";
 }
 
+// Change the conversation
 document.getElementById("button-addon2").onclick = sendListener;
 
 document.onkeyup = function () {
-  console.log("1");
   if (event.key == "Enter" && (document.activeElement === document.getElementById('input_text'))) {
-    console.log("2");
     var tmp = $('.nav-tabs .active').text();
     var conv = "";
     var numConv = 0;
@@ -41,19 +36,10 @@ document.onkeyup = function () {
         numConv = j;
       }
     }
-
     var ajout = document.getElementById('input_text').value;
-
-    console.log(Data_Contact[numConv].Etape_Conv);
-    console.log(Object.keys(Data_Contact[numConv].Echange).length);
-
-    console.log("test");
     responseOfContacts(ajout, numConv, conv);
-
-    console.log("test2");
     ajout = "";
     document.getElementById('input_text').value = "";
-
   }
 };
 
@@ -64,7 +50,6 @@ function responseOfContacts(rep, numConv, conv) {
     var etape = "R" + Data_Contact[numConv].Etape_Conv;
     var etapeSuivante = "O" + (Data_Contact[numConv].Etape_Conv + 1);
     var reponseTess = "Je n'ai pas compris, peux tu repeter";
-    console.log(Data_Contact[numConv].Echange[etape]);
     for (var x = 0; x < Data_Contact[numConv].Echange[etape].length; x++) {
       if (rep == Data_Contact[numConv].Echange[etape][x].substr(0, 1)) {
         reponseTess = Data_Contact[numConv].Echange[etapeSuivante][x].substr(4);
@@ -85,7 +70,6 @@ function responseOfContacts(rep, numConv, conv) {
 
       if (reponseTess != "Je n'ai pas compris, peux tu repeter") {
         var elemAEnlever = "choix_message_" + Data_Contact[numConv].Ref;
-        console.log(elemAEnlever);
         var child = document.getElementById("choix_message_" + Data_Contact[numConv].Ref);
         child.parentNode.removeChild(child);
 
@@ -108,7 +92,8 @@ function responseOfContacts(rep, numConv, conv) {
 
 }
 
-
+// Write every message of active conversation
+// Display according to the letter
 async function affichageMessageDeContexte(numConv) {
 
   function timer(ms) {
@@ -151,7 +136,6 @@ async function affichageMessageDeContexte(numConv) {
       }
       else if (key.substr(0, 1) == 'Q') {
         Data_Contact[numConv].Etape_Conv += 1;
-
         document.getElementById("ajout_message_" + conv).innerHTML +=
           '<div class="d-flex align-items-start flex-column">' +
           '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-secondary rounded">' + e +
@@ -159,7 +143,6 @@ async function affichageMessageDeContexte(numConv) {
           '</div>';
       }
       else if (key.substr(0, 1) == 'R') {
-
         var conv = Data_Contact[numConv].Ref;
         Data_Contact[numConv].Etape_Conv += 1;
         let str = "";
@@ -176,12 +159,13 @@ async function affichageMessageDeContexte(numConv) {
       }
     }
 
+    // Move the conversation to the bottom when a new message is posted
     var objDiv = document.getElementById("scroller1");
     objDiv.scrollTop = objDiv.scrollHeight;
   }
-
 }
 
+// Ajoute un onglet quand on clique sur un article
 function addWindows(article) {
   document.getElementById("button-addon2").onclick = function () {
 
@@ -196,27 +180,25 @@ function addWindows(article) {
         conv = Data_Contact[j].Ref;
       }
     }
-
     var ajout = document.getElementById('input_text').value;
-
     if (ajout != "") {
       document.getElementById("ajout_message_" + conv).innerHTML +=
         '<div class="d-flex align-items-end flex-column"><div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-white rounded">' + ajout + '</div></div>';
     }
-    console.log("ok" + ajout);
+    //console.log("ok" + ajout);
     ajout = "";
     document.getElementById('input_text').value = "";
   };
 }
 
-
 let listOnglet = [{ name: "FakeBook", url: "https://fakebook.com" }];
 
+// Change the visibility of the page
+// Display the correct one
+// Add or remove the different class
 function changeVisibility(NameDiv) {
   listOnglet.forEach(element => {
-
     if (element.name == NameDiv) {
-
       document.getElementById(element.name).classList.add('d-flex');
       document.getElementById(element.name).classList.add('flex-row');
       if (element != "FakeBook") {
@@ -228,7 +210,6 @@ function changeVisibility(NameDiv) {
       if (document.getElementById(element.name + "Remove")) {
         document.getElementById(element.name + "Remove").src = "../ImageSources/removeMain.png";
       }
-
     } else {
       document.getElementById(element.name).classList.remove('d-flex');
       document.getElementById(element.name).classList.remove('flex-row');
@@ -239,34 +220,31 @@ function changeVisibility(NameDiv) {
         document.getElementById(element.name + "Remove").src = "../ImageSources/removeHidden.png";
       }
     }
-
     if (element.name == "FakeBook") {
       document.getElementById("button-addon2").onclick = sendListener;
     }
   });
-
-
 }
 
+// Delete a tab
 function removeTab(tabName) {
   for (var i = 0; i < listOnglet.length; i++) {
     if (i.name === tabName) {
       listOnglet.splice(i, 1);
     }
   }
-
   listOnglet.splice(listOnglet.indexOf(tabName), 1);
   document.getElementById(tabName + "Tab").remove();
   document.getElementById(tabName).remove();
   document.getElementById('FakeBookTrigger').click();
 }
 
+// Add a tab
 function addArticleWindow(articleTitle, url) {
   if (listOnglet.includes({ name: articleTitle, url: url })) {
     document.getElementById(articleTitle + 'Trigger').click();
     return;
   }
-
   listOnglet.push({ name: articleTitle, url: url })
   let navBar = document.getElementById("navBar");
   navBar.innerHTML +=
@@ -274,16 +252,10 @@ function addArticleWindow(articleTitle, url) {
     '<a id="' + articleTitle + 'Trigger" class="d-inline-block nav-link" onclick="changeVisibility(\'' + articleTitle + '\');" href="#' + articleTitle + '">' + articleTitle + '</a>' +
     '<input id="' + articleTitle + 'Remove" type="image" src="../ImageSources/removeMain.png"  onclick="removeTab(\'' + articleTitle + '\');" alt="Submit" width="10" height="10">' +
     '</li>'
-
-  console.log(articleTitle + '.png')
   let site = document.getElementById("Total");
   site.innerHTML +=
     '<div class="ArticlePage" id="' + articleTitle + '" class="Page_Up d-flex flex-row">' +
     '<img  src="../Articles/' + articleTitle + '.png"/>' +
     '</div>'
-
-
-  //console.log(site.innerHTML)
   document.getElementById(articleTitle + 'Trigger').click();
-
 }

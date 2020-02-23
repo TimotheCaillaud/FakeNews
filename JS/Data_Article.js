@@ -1,4 +1,21 @@
 let Data_Article = [
+  /*
+  How to read this database :
+  - Publieur          = The name of the user posting the content
+  - Photo             = His picture
+  - Image             = The picture of the content or article
+  - ImageName         = The name of the picture
+  - ImageContext      = The context where the picture was originaly published
+  - Link              = 
+  - ArticleTitle      = The title of the article
+  - ArticlePublisher  = The name of the site that shared the article
+  - Url               = The URL of the article on Google
+  - Contenu           = The sentences posted by the user
+  - Likes             = The number of likes on the post
+  - Comments          = The number of comments on the post
+  - Shares            = The number of shares on the post
+  - Information       = Some information we have on the user
+  */
   {
     Publieur: "Paul",
     Photo: "Paul.png",
@@ -27,7 +44,6 @@ let Data_Article = [
     Shares: 0,
     Information: "If you love life, don't waste time, for time is what life is made up of."
   },
-
   {
     Publieur: "Momo",
     Photo: "Momo.png",
@@ -44,7 +60,6 @@ let Data_Article = [
     Shares: 2,
     Information: "Why people never reimbourse me.."
   },
-
   {
     Publieur: "Jibé",
     Photo: "Jibé.png",
@@ -61,7 +76,6 @@ let Data_Article = [
     Shares: 3,
     Information: "Haykyuu <3"
   },
-
   {
     Publieur: "Mario",
     Photo: "Mario.png",
@@ -78,7 +92,6 @@ let Data_Article = [
     Shares: 1,
     Information: "I have no idea how to fill it"
   },
-
   {
     Publieur: "Rami",
     Photo: "Rami.png",
@@ -95,7 +108,6 @@ let Data_Article = [
     Shares: 0,
     Information: "Convinced Republican"
   },
-
   {
     Publieur: "Maria",
     Photo: "Maria.png",
@@ -108,7 +120,6 @@ let Data_Article = [
     Shares: 1,
     Information: "Love life guys &#128526 !"
   },
-
   {
     Publieur: "Piki chan",
     Photo: "Piki.png",
@@ -118,7 +129,6 @@ let Data_Article = [
     Shares: 0,
     Information: "日本語は何も分からない"
   },
-
   {
     Publieur: "xXxTimothéKillerxXx",
     Photo: "Thimothé.png",
@@ -128,7 +138,6 @@ let Data_Article = [
     Shares: 0,
     Information: "Best fortnite player in my class"
   },
-
   {
     Publieur: "God",
     Photo: "theRock.png",
@@ -139,7 +148,6 @@ let Data_Article = [
     Shares: 34578,
     Information: "What's the key to success? The key is, there is no key. Be humble, hungry, and the hardest worker in any room."
   },
-
   {
     Publieur: "Reliable Statistic Agency",
     Photo: "RSA.png",
@@ -149,7 +157,6 @@ let Data_Article = [
     Shares: 3,
     Information: "We are aiming at a trustable world where all information would be rigorously and scientifically proved"
   },
-
   {
     Publieur: "Polo",
     Photo: "Polo.png",
@@ -159,7 +166,6 @@ let Data_Article = [
     Shares: 1,
     Information: "champion du monde avant tout"
   },
-
   {
     Publieur: "Verlaine",
     Photo: "Verlaine.png",
@@ -169,7 +175,6 @@ let Data_Article = [
     Shares: 2,
     Information: "Tears are shed in my heart like the rain on the town. "
   },
-
   {
     Publieur: "Karine",
     Photo: "Karine.png",
@@ -188,42 +193,50 @@ let Data_Article = [
     Shares: 15,
     Information: "Expert of the Arabo-Muslim world"
   }
-
-
-
 ];
 
+//Write the HTML on the article part
 function chargementDesArticles() {
 
+  // Article's list
   document.write(
-    '<div id="Gauche" class=" d-inline-block"></div>' +
     '<div id="Liste_Articles" class=" px-5 d-inline-block">'
   );
 
+  // Shuffle the order of publication of articles
   shuffle(Data_Article);
   for (var j = 0; j < Data_Article.length; j++) {
 
     let image = "";
     let articleDescription = "";
 
+    // Check if the post has an image
     if (Data_Article[j].Image) {
+
+      // Check if the post is an article
       if (Data_Article[j].Link) {
+
+        // Double-click on picture for context of the picture
         image = '<div  data-target="#popUpContext" ondblclick="openContext(' + j + ')" class="ArticleImagePreview">' +
           '<img class="ArticleImagePreview" src="../ImageSources/' + Data_Article[j].Image + '" />' +
           '</div>';
-        //onclick="addArticleWindow(\'' + Data_Article[j].Link + '\',\'' + Data_Article[j].Url + '\');"
+        
+        // Simple click on Descritpion to open the article
         articleDescription = '<div class="articleDescription" onclick="addArticleWindow(\'' + Data_Article[j].Link + '\',\'' + Data_Article[j].Url + '\');">' +
           '<div class="articlePublisher">' + Data_Article[j].ArticlePublisher + '</div>' +
           '<div class="articleTitle">' + Data_Article[j].ArticleTitle + '</div>' +
           '</div>';
 
       } else {
+
+        // Double-click on picture for context of the picture
         image = '<div  data-target="#popUpContext" ondblclick="openContext(' + j + ')" class="PublicationImage">' +
           '<img  src="../ImageSources/' + Data_Article[j].Image + '" />' +
           '</div>';
       }
     }
 
+    // Creation of the post
     document.write(
       '<div class="Article border">' +
       '<div class="Article_Header d-flex flex-row ">' +
@@ -249,12 +262,13 @@ function chargementDesArticles() {
     );
   }
   document.write(
-    '</div>' +
-    '<div id="Droite" class="d-inline-block"></div>'
+    '</div>' 
   );
 }
 
-//copied from stackoverflow
+// Copied from stackoverflow
+// Take an array and shuffle the elements' order
+// Return the new array
 function shuffle(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
@@ -270,44 +284,36 @@ function shuffle(array) {
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
   }
-
   return array;
 }
 
+// Change the user pop-up information
+// Display the user pop-up
 function changeInfoPopUp(ArticleNumber) {
   let popUp = document.getElementById("popUpInformation");
-  console.log(popUp);
 
   let photoPopUp = document.getElementById("PosteurPhoto");
-  console.log(photoPopUp);
-  //let StringSourceImg = "../ImageSources/"
   photoPopUp.setAttribute("src", "../ImageSources/" + Data_Article[ArticleNumber].Photo);
 
   let namePopUp = document.getElementById("PosteurName");
   namePopUp.innerHTML = Data_Article[ArticleNumber].Publieur;
-  console.log(namePopUp);
 
   let infoPopUp = document.getElementById("PosteurInformations");
   infoPopUp.innerHTML = Data_Article[ArticleNumber].Information;
-  console.log(infoPopUp);
 }
 
-
+// Change the picture/image pop-up information
+// Display the picture/image pop-up
 function openContext(ArticleNumber) {
   let popUpContext = document.getElementById("popUpContext");
-  console.log(popUpContext);
   $("#popUpContext").modal();
 
   let imagePopUpContext = document.getElementById("ContextImage");
-  console.log(imagePopUpContext);
-  //let StringSourceImg = "../ImageSources/"
   imagePopUpContext.setAttribute("src", "../ImageSources/" + Data_Article[ArticleNumber].Image);
 
   let namePopUpContext = document.getElementById("NameImage");
   namePopUpContext.innerHTML = Data_Article[ArticleNumber].ImageName;
-  console.log(namePopUpContext);
 
   let infoPopUpContext = document.getElementById("InformationsImage");
   infoPopUpContext.innerHTML = Data_Article[ArticleNumber].ImageContext;
-  console.log(infoPopUpContext);
 }

@@ -7,6 +7,26 @@ body {
     overflow-y: hidden;
 }
 
+#En-tete{
+    height: 0vh;
+}
+
+#Header_onglet{
+    height:50vb
+}
+
+#Header_recherche{
+    margin-top:36px; 
+}
+
+#url{
+    padding-top: 4px
+}
+
+#urlBar{
+    width: 1000px
+}
+
 .Page_Up{
     padding-top:90px;
     height: 100vh;
