@@ -19,12 +19,13 @@
 </head>
 
 <body>
-  <div id="Total" >
+  <div id="Total">
     <div id="En-tete" style="height: 0vh;">
       <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top" style="height:50vb" id="Header_onglet">
         <ul id="navBar" class="navbar-nav">
-          <li class="nav-item" >
-            <a id="FakeBookTrigger" class="nav-link active" onclick="changeVisibility('FakeBook');" href="#Corps">FakeBook</a>
+          <li class="nav-item">
+            <a id="FakeBookTrigger" class="nav-link active" onclick="changeVisibility('FakeBook');"
+              href="#Corps">FakeBook</a>
           </li>
           <!-- <li class="nav-item">
             <a class="nav-link" onclick="changeVisibility('Article_Premier');"
@@ -44,8 +45,9 @@
           </li> -->
           <li class="nav-item">
             <!-- TODO changer action -->
-            <form class="form-inline" action="/action_page.php" style=" padding-top: 4px" >
-              <input id="urlBar" class="form-control mr-sm-2" type="text" value="https://fakebook.com" placeholder="" style=" width: 1000px">
+            <form class="form-inline" action="/action_page.php" style=" padding-top: 4px">
+              <input id="urlBar" class="form-control mr-sm-2" type="text" value="https://fakebook.com" placeholder=""
+                style=" width: 1000px">
 
 
               <!--<button class="btn btn-success" type="submit">Search</button>-->
@@ -54,18 +56,18 @@
         </ul>
       </nav>
     </div>
-     <div id="FakeBook" class="d-flex flex-row">
+    <div id="FakeBook" class="d-flex flex-row">
 
       <div id="UserInfo" class="Page_Up d-inline-block">
         <div class="ProfilePicture">
-          <img  src="../ImageSources/profilePic.png" />
+          <img src="../ImageSources/profilePic.png" />
         </div>
         <p class='UserInfoSeperation'>
-        <div class= "UserInfoText" > Alexis </div>
-        <div class= "UserInfoText"> 24 years old  </div>
-        <p>
-        <div class= "UserInfoText"> Friends: 143  </div>
-        <div class= "UserInfoText"> Notififactions: 0  </div>
+          <div class="UserInfoText"> Alexis </div>
+          <div class="UserInfoText"> 24 years old </div>
+          <p>
+            <div class="UserInfoText"> Friends: 143 </div>
+            <div class="UserInfoText"> Notififactions: 0 </div>
       </div>
 
       <div id="Corps" class="Page_Up d-flex flex-row">
@@ -74,16 +76,17 @@
         </script>
       </div class="Page_Up d-flex flex-row">
 
-        <script>
-          chargementDesContacts();
-        </script>
+      <script>
+        chargementDesContacts();
+      </script>
     </div>
   </div>
-<div class="modal fade" id="popUpInformation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal fade" id="popUpInformation" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <img id="PosteurPhoto" src="../ImageSources/contact_android3.png"/>
+          <img id="PosteurPhoto" src="../ImageSources/contact_android3.png" />
           <h5 class="modal-title" id="PosteurName">Nom de l'utilisateur</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -92,6 +95,29 @@
         <div class="modal-body" id="PosteurInformations">
           Ici seront écrit les Informations
           <br>que l'on a sur la personne qui poste.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="popUpContext" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content ">
+
+        <div class="modal-header">
+          <h5 class="modal-title pl-2" id="NameImage">Nom de l'image</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body">
+          <img id="ContextImage" src="../ImageSources/contact_android3.png" />
+          <div class="pt-2" id="InformationsImage">
+            Ici seront écrit les Informations
+            <br>que l'on a sur la personne qui poste.
+          </div>
         </div>
       </div>
     </div>
