@@ -6,6 +6,7 @@ body {
     height: 100vh;
     overflow-y: hidden;
 }
+
 .Page_Up{
     padding-top:90px;
     height: 100vh;
@@ -15,20 +16,12 @@ body {
     display: none;
 }
 
-#Liste_Articles{
-    width: 50vw;
-    height: 100%;
-    overflow-y:scroll;
-    background-color: #DDD ;
-    margin-top: 0px;
-
-}
-
 #PosteurPhoto{
     height : 50px;
     width : 50px;
     margin-right: 15px;
 }
+
 #PosteurName{
     margin-top: 8px;
 }
@@ -38,200 +31,45 @@ body {
     background-color: #DDD ;
 }
 
-#Messagerie{
-    padding-top:112px;
-    width: 30vw;
-    height: 100vh;
-}
-
-#Liste_Contact{
-    height: 20%;
-}
-
-#Vide_Messagerie{
-    height: 8%;
-}
-
-#Echange_Contact{
-    height: 72%;
-}
-
-
-.ProfilePicture{
-  padding-top: 40px;
-  padding-left: 9vw;
-}
-
-.ProfilePicture img{
-  width: 10vw;
-}
-
-.UserInfoText{
-  padding-left: 2vw;
-  font-size: 1.2em;
-  font-weight:bold;
-  text-align: center;
-}
-
-.UserInfoSeperation{
-  padding-top: 15px;
-}
-
-.Article{
-  border-radius: 5px;
-  margin-right: 15%;
-  margin-top: 10px;
-  background-color: #59F;
-  }
-
-.Artcile_Header{
-    height: 40px;
-}
-
-.Photo_posteur{
-    margin: 5px;
-    margin-left: 10px;
-    margin-top: 7px;
-    height: 50px;
-    width: 50px;
-    cursor:pointer;
-
-}
-
-.Publieur{
-    text-overflow: ellipsis;
-    font-size: 1.1em;
-    margin-top: 12px;
-    margin-left: 8px;
-    font-weight:bold;
-    white-space: nowrap;
-    overflow: hidden;
-    color: white;
-}
-
-.Contenu{
-    overflow-wrap: break-word;
-    font-size: 1em;
-    margin-left: 15px;
-    margin-bottom: 15px;
-    overflow: hidden;
-    color: white;
-}
-
-.ArticleImagePreview {
-    cursor:pointer;
-    max-height: 250px;
-    overflow: hidden;
-    margin-top: 5px;
-}
-.ArticleImagePreview img {
-    width: 100%;
-    max-height: initial
-}
-
-.articleDescription{
-    background-color: #0003;
-    cursor:pointer;
-}
-
-.ArticleImagePreview {
-    cursor:pointer;
-    max-height: 300px;
-    overflow: hidden;
-}
-.ArticleImagePreview img {
-    width: 100%;
-    max-height: initial
-}
-
-.articlePublisher{
-    padding-top: 10px;
-    padding-left: 20px;
-    font-size: 1.2em;
-    color: 	#BBB
-}
-
-.articleTitle{
-    padding-left: 20px;
-    padding-bottom: 15px;
-    font-size: 1.2em;
-    font-weight:bold;
-    color: white;
-    border-bottom: 1px solid #dee2e6;
-}
-
-.PublicationImage img {
-    width: 100%;
-    max-height: initial;
-    margin-top: 5px;
-
-}
-
-.Publication_Statistiques{
-    margin-bottom: 10px;
-    margin-top: 10px;
-}
-
-.Stat_Logo{
-    margin-top: 3px;
-    margin-left: 25px;
-    height: 20px;
-    width: 20px;
-}
-
-.Stat_Num{
-    margin-left: 8px;
-    font-size: 1em;
-    font-weight:bold;
-    color: white;
-}
-
-.Conversation{
-    height: 94%;
-    font-size: 1.5rem
-}
-
-.Correspondant{
-    height: 7%;
-}
-
-.Echange{
-    width: 100%;
-    height: 93%;
-    overflow-y: scroll;
-}
-
-.Text_Conv{
-    font-size: 1rem;
-    max-width: 80%;
-}
-
-.Zone_de_saisie{
-    height: 6%;
-}
-
-.ajout-message{
-    width: 100%;
-}
-
-.ArticlePage{
-  width: 100%;
-  height: auto;
-  overflow-y:scroll;
-}
-
-.ArticlePage img{
-  width: 100%;
-}
-
-.selectedTab{
-  color: blue;
-}
-
-.unselectedTab{
-  color: white;
-}
-
 #ContextImage{
     max-width: 100%;
 }
+
+.ProfilePicture{
+    padding-top: 40px;
+    padding-left: 9vw;
+}
+
+.ProfilePicture img{
+    width: 10vw;
+}
+
+.UserInfoText{
+    padding-left: 2vw;
+    font-size: 1.2em;
+    font-weight:bold;
+    text-align: center;
+}
+
+.UserInfoSeperation{
+    padding-top: 15px;
+}
+
+.ArticlePage{
+    width: 100%;
+    height: auto;
+    overflow-y:scroll;
+}
+
+.ArticlePage img{
+    width: 100%;
+}
+
+.selectedTab{
+    color: blue;
+}
+
+.unselectedTab{
+    color: white;
+}
+
