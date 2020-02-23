@@ -11,17 +11,17 @@ let Data_Article = [
         Likes: 27,
         Comments: 10,
         Shares: 2,
-        Information: "Salut Paul !"
+        Information: "Honor your father and your mother, that your days may be long in the land that the Lord your God is giving you.” – Exodus 20:12"
     },
     {
-        Publieur: "Cynthiiia Coeur",
+        Publieur: "Cynthiiia <3",
         Photo: "cynthia.png",
         Contenu: "OMG !!!! pls share or your loved ones risk to die &#128561 &#128561 &#128557 &#128557 &#128557 !!!! ",
         Image: "banana_egg.jpg",
         Likes: 10,
         Comments: 4,
         Shares: 0,
-        Information: "Salut Paul !"
+        Information: "If you love life, don't waste time, for time is what life is made up of."
     },
 
     {
@@ -36,7 +36,7 @@ let Data_Article = [
         Likes: 15,
         Comments: 1,
         Shares: 2,
-        Information: "Salut Paul !"
+        Information: "Why people never reimbourse me.."
     },
 
     {
@@ -51,7 +51,7 @@ let Data_Article = [
         Likes: 11,
         Comments: 2,
         Shares: 3,
-        Information: "Salut Paul !"
+        Information: "Haykyuu <3"
     },
 
     {
@@ -66,7 +66,7 @@ let Data_Article = [
         Likes: 21,
         Comments: 6,
         Shares: 1,
-        Information: "Salut Paul !"
+        Information: "I have no idea how to fill it"
     },
 
     {
@@ -81,7 +81,7 @@ let Data_Article = [
         Likes: 1,
         Comments: 0,
         Shares: 0,
-        Information: "Salut Paul !"
+        Information: "Convinced Republican"
     },
 
     {
@@ -92,7 +92,7 @@ let Data_Article = [
         Likes: 12,
         Comments: 0,
         Shares: 1,
-        Information: "Salut Paul !"
+        Information: "Love life guys &#128526 !"
     },
 
     {
@@ -102,7 +102,7 @@ let Data_Article = [
         Likes: 3,
         Comments: 76,
         Shares: 0,
-        Information: "Salut Paul !"
+        Information: "日本語は何も分からない"
     },
 
     {
@@ -112,7 +112,7 @@ let Data_Article = [
         Likes: 0,
         Comments: 0,
         Shares: 0,
-        Information: "Salut Paul !"
+        Information: "Best fortnite player in my class"
     },
 
     {
@@ -123,7 +123,7 @@ let Data_Article = [
         Likes: 15052,
         Comments: 4358,
         Shares: 34578,
-        Information: "Salut Paul !"
+        Information: "What's the key to success? The key is, there is no key. Be humble, hungry, and the hardest worker in any room."
     },
 
     {
@@ -133,7 +133,7 @@ let Data_Article = [
         Likes: 0,
         Comments: 854,
         Shares: 3,
-        Information: "Salut Paul !"
+        Information: "We are aiming at a trustable world where all information would be rigorously and scientifically proved"
     },
 
     {
@@ -143,17 +143,17 @@ let Data_Article = [
         Likes: 0,
         Comments: 0,
         Shares: 1,
-        Information: "Salut Paul !"
+        Information: "champion du monde avant tout"
     },
 
     {
         Publieur: "Verlaine",
         Photo: "Verlaine.png",
-        Contenu: "Poesy are soooooooo funny wtf !!! &#128562 &#128562 &#128562",
+        Contenu: "Poesy is sooo funny wtf !!! &#128562 &#128562 &#128562",
         Likes: 101,
         Comments: 3,
         Shares: 2,
-        Information: "Salut Paul !"
+        Information: "Tears are shed in my heart like the rain on the town. "
     },
 
     {
@@ -163,7 +163,7 @@ let Data_Article = [
         Likes: 45,
         Comments: 4,
         Shares: 0,
-        Information: "Salut Paul !"
+        Information: "Love K-pop, dance and Jimin &#128522 "
     },
     {
         Publieur: "Lucien Bramart",
@@ -172,7 +172,7 @@ let Data_Article = [
         Likes: 153,
         Comments: 22,
         Shares: 15,
-        Information: "Salut Paul !"
+        Information: "Expert of the Arabo-Muslim world"
     }
 
 

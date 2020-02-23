@@ -1,3 +1,7 @@
+body {
+  background-color: #DDD ;
+}
+
 #FakeBook{
     height: 100vh;
     overflow-y: hidden;
@@ -16,6 +20,8 @@
     height: 100%;
     overflow-y:scroll;
     background-color: #DDD ;
+    margin-top: 0px;
+
 }
 
 #PosteurPhoto{
@@ -52,7 +58,7 @@
 
 
 .ProfilePicture{
-  padding-top: 20px;
+  padding-top: 40px;
   padding-left: 9vw;
 }
 
@@ -76,7 +82,7 @@
   margin-right: 15%;
   margin-top: 10px;
   background-color: #59F;
-}
+  }
 
 .Artcile_Header{
     height: 40px;
@@ -88,6 +94,8 @@
     margin-top: 7px;
     height: 50px;
     width: 50px;
+    cursor:pointer;
+
 }
 
 .Publieur{
@@ -102,23 +110,23 @@
 }
 
 .Contenu{
-    word-wrap: break-word;
+    overflow-wrap: break-word;
     font-size: 1em;
     margin-left: 15px;
     margin-bottom: 15px;
-    white-space: nowrap;
     overflow: hidden;
     color: white;
 }
 
-.ArticleImagePreview {  
-    cursor:pointer;  
-    max-height: 250px; 
-    overflow: hidden; 
+.ArticleImagePreview {
+    cursor:pointer;
+    max-height: 250px;
+    overflow: hidden;
+    margin-top: 5px;
 }
-.ArticleImagePreview img {  
-    width: 100%; 
-    max-height: initial 
+.ArticleImagePreview img {
+    width: 100%;
+    max-height: initial
 }
 
 .articleDescription{
@@ -126,14 +134,14 @@
     cursor:pointer;
 }
 
-.ArticleImagePreview {  
-    cursor:pointer;  
-    max-height: 300px; 
-    overflow: hidden; 
+.ArticleImagePreview {
+    cursor:pointer;
+    max-height: 300px;
+    overflow: hidden;
 }
-.ArticleImagePreview img {  
-    width: 100%; 
-    max-height: initial 
+.ArticleImagePreview img {
+    width: 100%;
+    max-height: initial
 }
 
 .articlePublisher{
@@ -152,9 +160,11 @@
     border-bottom: 1px solid #dee2e6;
 }
 
-.PublicationImage img {  
-    width: 100%; 
-    max-height: initial 
+.PublicationImage img {
+    width: 100%;
+    max-height: initial;
+    margin-top: 5px;
+
 }
 
 .Publication_Statistiques{

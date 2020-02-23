@@ -1,5 +1,4 @@
 let sendListener = function() {
-  console.log("test");
   var tmp = $('.nav-tabs .active').text();
   var conv = "";
   var numConv = 0;
@@ -60,12 +59,12 @@ document.onkeyup = function(){
 
 function responseOfContacts(rep,numConv,conv){
 
-
   if(Data_Contact[numConv].Etape_Conv < Object.keys(Data_Contact[numConv].Echange).length){
       //le scenario n'est pas terminé avec ce contact
       var etape = "R"+Data_Contact[numConv].Etape_Conv;
       var etapeSuivante = "O"+ (Data_Contact[numConv].Etape_Conv+1) ;
       var reponseTess = "Je n'ai pas compris, peux tu repeter";
+      console.log(Data_Contact[numConv].Echange[etape]);
       for(var x = 0;x<Data_Contact[numConv].Echange[etape].length; x++){
           if( rep == Data_Contact[numConv].Echange[etape][x].substr(0,1)){
               reponseTess = Data_Contact[numConv].Echange[etapeSuivante][x].substr(4);
@@ -79,6 +78,7 @@ function responseOfContacts(rep,numConv,conv){
               '<div class="d-flex align-items-end flex-column"><div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-white rounded">' + rep + '</div></div>';
       }
 
+      setTimeout( () => {
       //reponse de Tess
       document.getElementById("ajout_message_" + conv).innerHTML +=
       '<div class="d-flex align-items-start flex-column"><div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-success rounded">' + reponseTess + '</div></div>';
@@ -93,6 +93,7 @@ function responseOfContacts(rep,numConv,conv){
           Data_Contact[numConv].Etape_Conv +=1;
           affichageMessageDeContexte(numConv);
       }
+    },3000);
   }
   else{
       //Le scenario est terminé avec ce contact
@@ -107,11 +108,16 @@ function responseOfContacts(rep,numConv,conv){
 }
 
 
-function affichageMessageDeContexte(numConv){
+async function affichageMessageDeContexte(numConv){
+
+  function timer(ms) {
+    return new Promise(res => setTimeout(res, ms));
+  }
 
   for (var key in Data_Contact[numConv].Echange) {
-      if(parseInt(key.substr(1))>Data_Contact[numConv].Etape_Conv){
 
+      if(parseInt(key.substr(1))>Data_Contact[numConv].Etape_Conv){
+          await timer(3000);
           var e = Data_Contact[numConv].Echange[key];
           var conv = Data_Contact[numConv].Ref;
 
@@ -126,7 +132,7 @@ function affichageMessageDeContexte(numConv){
           }
           else if(key.substr(0, 1) == 'O'){
               document.getElementById("ajout_message_" + conv).innerHTML +=
-                  '<div class="d-flex align-items-start flex-column">' +
+                  '<div class="d-flex align-items-start flex-column" >' +
                   '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-right bg-success rounded">' + Data_Contact[numConv].Echange[key] +
                   '</div>' +
                   '</div>'
