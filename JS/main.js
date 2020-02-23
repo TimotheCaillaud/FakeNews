@@ -110,7 +110,7 @@ async function affichageMessageDeContexte(numConv) {
       if (key.substr(0, 1) == 'M') {
         document.getElementById("ajout_message_" + conv).innerHTML +=
           '<div class="d-flex align-items-start flex-column">' +
-          '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-secondary rounded">' + Data_Contact[numConv].Echange[key] +
+          '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left text-white bg-secondary rounded">' + Data_Contact[numConv].Echange[key] +
           '</div>' +
           '</div>'
           ;

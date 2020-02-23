@@ -162,7 +162,7 @@ async function chargementDesContacts() {
                 if (key.substr(0, 1) == 'M') {
                     document.write(
                         '<div class="d-flex align-items-start flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-secondary rounded">' + Data_Contact[k].Echange[key] +
+                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left text-white bg-secondary rounded">' + Data_Contact[k].Echange[key] +
                         '</div>' +
                         '</div>'
                     );
@@ -192,7 +192,7 @@ async function chargementDesContacts() {
                     Data_Contact[k].Etape_Conv += 1;
                     document.write(
                         '<div class="d-flex align-items-start flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-secondary rounded">' + e +
+                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left text-white bg-secondary rounded">' + e +
                         '</div>' +
                         '</div>'
                     );
@@ -255,7 +255,7 @@ async function chargementDesContacts() {
         if (key.substr(0, 1) == 'M') {
             document.getElementById(id).innerHTML +=
                 '<div class="d-flex align-items-start flex-column">' +
-                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-secondary rounded">' + Data_Contact[k].Echange[key] +
+                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left text-white bg-secondary rounded">' + Data_Contact[k].Echange[key] +
                 '</div>' +
                 '</div>'
             Data_Contact[k].Etape_Conv += 1;
@@ -282,7 +282,7 @@ async function chargementDesContacts() {
             Data_Contact[k].Etape_Conv += 1;
             document.getElementById("ajout_message_" + conv).innerHTML +=
                 '<div class="d-flex align-items-start flex-column">' +
-                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-secondary rounded">' + e +
+                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left text-white bg-secondary rounded">' + e +
                 '</div>' +
                 '</div>';
         }
