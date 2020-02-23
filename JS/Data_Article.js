@@ -25,6 +25,7 @@ let Data_Article = [
     Likes: 10,
     Comments: 4,
     Shares: 0,
+    ImageContext: 'No data was found about this picture',
     Information: "If you love life, don't waste time, for time is what life is made up of."
   },
 
@@ -102,7 +103,7 @@ let Data_Article = [
     Contenu: "Germans take to the streets chanting \"Germany Stands With You France\" after terrorist attacks &#128557 &#129321",
     Image: "germanyTerroristAttack.jpg",
     ImageName: "",
-    ImageContext: "",
+    ImageContext: "This picture has widely spread on the networks, presented as a rally of support in Germany, following the shootings in France. In reality, it corresponds to a manifestation of the German anti-immigration movement Pegida.",
     Likes: 12,
     Comments: 0,
     Shares: 1,
@@ -137,6 +138,7 @@ let Data_Article = [
     Likes: 15052,
     Comments: 4358,
     Shares: 34578,
+    ImageContext: "This picture is a selfie of the U.S actor Dwayns Johnson posted on the social media Instagram",
     Information: "What's the key to success? The key is, there is no key. Be humble, hungry, and the hardest worker in any room."
   },
 
@@ -208,10 +210,9 @@ function chargementDesArticles() {
 
     if (Data_Article[j].Image) {
       if (Data_Article[j].Link) {
-        image = '<div  data-target="#popUpContext" ondblclick="openContext(' + j + ')" class="ArticleImagePreview">' +
+        image = '<div  data-target="#popUpContext" onclick="addArticleWindow(\'' + Data_Article[j].Link + '\',\'' + Data_Article[j].Url + '\');" class="ArticleImagePreview">' +
           '<img class="ArticleImagePreview" src="../ImageSources/' + Data_Article[j].Image + '" />' +
           '</div>';
-        //onclick="addArticleWindow(\'' + Data_Article[j].Link + '\',\'' + Data_Article[j].Url + '\');"
         articleDescription = '<div class="articleDescription" onclick="addArticleWindow(\'' + Data_Article[j].Link + '\',\'' + Data_Article[j].Url + '\');">' +
           '<div class="articlePublisher">' + Data_Article[j].ArticlePublisher + '</div>' +
           '<div class="articleTitle">' + Data_Article[j].ArticleTitle + '</div>' +

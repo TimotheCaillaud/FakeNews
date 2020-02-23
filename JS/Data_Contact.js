@@ -47,7 +47,7 @@ let Data_Contact = [
             M23: "Wow, it makes me feel bad to share that much fake news to you.. Even more than the Obamas divorce &#128533",
             M24: "Have you seen it Alexis ?",
 
-            R25: ["1 - Yes I saw it, that's sad for them! ", 
+            R25: ["1 - Yes I saw it, that's sad for them! ",
                 "2 - I think you get trap again by a fake news"],
 
             O26: ["1 - Nooo ! I was testing you &#128517, the article shared by Rami that you maybe saw is fake, actually that's from a forum, everyone can write the article he wants, so that's deffinitely not reliable as there is no external sources. In addition it uses a catchy title, so you should have mistrust it even more? Everything is well explained in the article of Snopes, that's a website specialised in fake news debunking, it's interesting to check sometimes ",
@@ -84,7 +84,7 @@ let Data_Contact = [
             M1: "Hey men! How r you?",
             M2: "Do you remember that I lend you some money last week?",
             M3: "???",
-            N4: "I know you saw the message..",
+            M4: "I know you saw the message..",
             M5: "come one it's just 5€..",
             M6: "I can't eat today because of you..",
         },
@@ -96,17 +96,17 @@ let Data_Contact = [
 async function chargementDesContacts() {
 
     document.write(
-        '<div id="Messagerie" class="d-inline-block">' +
+        '<div id="Messagerie" style="background-color: #87CEFA" class="d-inline-block">' +
 
         '<div  id="Liste_Contact">' +
-        '<ul class="nav nav-tabs flex-column">'
+        '<ul class="nav flex-column">'
     );
 
     for (var j = 0; j < Data_Contact.length; j++) {
         document.write(
             '<li class="nav-item d-flex flex-row">' +
             '<img width: auto;" src="../ImageSources/' + Data_Contact[j].Photo + '" class="Photo_posteur" />' +
-            '<a class="nav-link" data-toggle="tab" href="#' + Data_Contact[j].Ref + '">' + Data_Contact[j].Nom +
+            '<a style="color:black" class="nav-link" data-toggle="tab" href="#' + Data_Contact[j].Ref + '">' + Data_Contact[j].Nom +
             '</a>' +
             '</li>'
         );
@@ -127,19 +127,19 @@ async function chargementDesContacts() {
     for (var k = 0; k < Data_Contact.length; k++) {
         if (k == 0) {
             document.write(
-                '<div id="' + Data_Contact[k].Ref + '" class="Conversation tab-pane active text-center">' +
-                '<div class="Correspondant">' + Data_Contact[k].Nom +
+                '<div id="' + Data_Contact[k].Ref + '" class="Conversation tab-pane active text-center" style="background-color: #87CEFA" >' +
+                '<div class="Correspondant" style="border-color:black;border-style: solid; padding-bottom:10% ;background-color: #1E90FF; border-width: thin;">' + Data_Contact[k].Nom +
                 '</div>' +
-                '<div id="scroller1" class="Echange bg-primary">' +
+                '<div id="scroller1" class="Echange">' +
                 '<div id ="ajout_message_' + Data_Contact[k].Ref + '" class="ajout-message p-2 d-inline-flex flex-column bd-highlight">'
             );
         }
         else {
             document.write(
-                '<div id="' + Data_Contact[k].Ref + '" class="Conversation tab-pane fade text-center">' +
-                '<div class="Correspondant">' + Data_Contact[k].Nom +
+                '<div id="' + Data_Contact[k].Ref + '" class="Conversation tab-pane fade text-center" style="background-color: #87CEFA">' +
+                '<div class="Correspondant"  style="border-color:black;border-style: solid; padding-bottom:10% ;background-color: #1E90FF; border-width: thin;">' + Data_Contact[k].Nom +
                 '</div>' +
-                '<div class="Echange bg-primary">' +
+                '<div class="Echange">' +
                 '<div id ="ajout_message_' + Data_Contact[k].Ref + '" class="ajout-message p-2 d-inline-flex flex-column bd-highlight">'
             );
         }
@@ -150,7 +150,7 @@ async function chargementDesContacts() {
                 if (key.substr(0, 1) == 'M') {
                     document.write(
                         '<div class="d-flex align-items-start flex-column">' +
-                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-secondary rounded">' + Data_Contact[k].Echange[key] +
+                        '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-info rounded">' + Data_Contact[k].Echange[key] +
                         '</div>' +
                         '</div>'
                     );
@@ -241,8 +241,8 @@ async function chargementDesContacts() {
         await timer(3000);
         if (key.substr(0, 1) == 'M') {
             document.getElementById(id).innerHTML +=
-                '<div class="d-flex align-items-start flex-column">' +
-                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-secondary rounded">' + Data_Contact[k].Echange[key] +
+                '<div class="d-flex align-items-start flex-column" >' +
+                '<div class="Text_Conv p-2 bd-highlight d-inline-flex px-3 mb-1 text-left bg-info rounded">' + Data_Contact[k].Echange[key] +
                 '</div>' +
                 '</div>'
 
