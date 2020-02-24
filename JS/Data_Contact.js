@@ -96,7 +96,7 @@ let Data_Contact = [
 async function chargementDesContacts() {
 
     document.write(
-        '<div id="Messagerie" style="background-color: #87CEFA" class="d-inline-block">' +
+        '<div id="Messagerie" style="background-color: #67AEFA" class="d-inline-block">' +
 
         '<div  id="Liste_Contact">' +
         '<ul class="nav flex-column">'
