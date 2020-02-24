@@ -20,8 +20,7 @@ let Data_Article = [
     Publieur: "Paul",
     Photo: "Paul.png",
     Image: "KoreaChristianityPreview.jpg",
-    ImageName: "",
-    ImageContext: "",
+    ImageContext: "Kim and Moon shake hands in greeting at the demarcation line, on April 27 2018.",
     Link: "Charisma Magazine",
     ArticleTitle: "North Korea Will Open Its Doors to Christianity",
     ArticlePublisher: "CHARISMA",
@@ -37,12 +36,10 @@ let Data_Article = [
     Photo: "cynthia.png",
     Contenu: "OMG !!!! pls share or your loved ones risk to die &#128561 &#128561 &#128557 &#128557 &#128557 !!!! ",
     Image: "banana_egg.jpg",
-    ImageName: "salut",
-    ImageContext: "salut",
+    ImageContext: "It is unclear what 'net' is in danger of being killed by this combination of food, but the claim presented here appears to have its origins in a dubious chain message spread via the mobile chat app WhatsApp. The earliest reference to the claim we could find was an 18 January 2017 Facebook post by a Nigerian based internet comedy channel.",
     Likes: 10,
     Comments: 4,
     Shares: 0,
-    ImageContext: 'No data was found about this picture',
     Information: "If you love life, don't waste time, for time is what life is made up of."
   },
   {
@@ -50,8 +47,7 @@ let Data_Article = [
     Photo: "Momo.png",
     Contenu: "Very interesting article if your looking for information for a proper diet &#129488",
     Image: "optimalWellnessCenterPreview.jpg",
-    ImageName: "",
-    ImageContext: "",
+    ImageContext: "A random pictures of vegetables",
     Link: "Reaching for Optimal...",
     ArticleTitle: "Reaching for Optimal Wellness",
     ArticlePublisher: "Optimal Wellness Center",
@@ -66,8 +62,7 @@ let Data_Article = [
     Photo: "Jibé.png",
     Contenu: "As a big fan of bananas, I'm happy to finnaly find answer to my questions ",
     Image: "timesBananaPreview.jpg",
-    ImageName: "",
-    ImageContext: "",
+    ImageContext: "Picture of bananas in a grocery store",
     Link: "Examining the banana",
     ArticleTitle: "Are Bananas Really Worth the Calories?",
     ArticlePublisher: "Time",
@@ -82,8 +77,7 @@ let Data_Article = [
     Photo: "Mario.png",
     Contenu: "Finaly the truth about this story ! &#128527",
     Image: "snopeObamaPreview.png",
-    ImageName: "",
-    ImageContext: "",
+    ImageContext: "Barack Obama called for equal rights for homosexuals in Africa on Saturday 26 July 2015 during a groundbreaking visit to Kenya.",
     ArticleTitle: "Did Michelle Obama File For Divorce After Barack Admitted He Was Gay?",
     ArticlePublisher: "Snopes",
     Url: "https://www.snopes.com/fact-check/michelle-obama-divorce-barack",
@@ -98,8 +92,7 @@ let Data_Article = [
     Photo: "Rami.png",
     Contenu: "I know why I didn't vote for him thought...  &#128528 &#128528",
     Image: "ObamaFakeNewsReview.jpg",
-    ImageName: "",
-    ImageContext: "",
+    ImageContext: "Barack Obama takes the oath of office as the 44th President of the United States. On January 20 2009",
     ArticleTitle: "Michelle Obama Files For Divorce After Shocking Revelation; Barack Obama Admits: ‘I’m Gay!’",
     ArticlePublisher: "Wit The Shit",
     Url: "https://wittheshit.com/michelle-obama-files-for-divorce-after-shocking-revelation-barack-obama-admits-im-gay/",
@@ -114,7 +107,6 @@ let Data_Article = [
     Photo: "Maria.png",
     Contenu: "Germans take to the streets chanting \"Germany Stands With You France\" after terrorist attacks &#128557 &#129321",
     Image: "germanyTerroristAttack.jpg",
-    ImageName: "",
     ImageContext: "This picture has widely spread on the networks, presented as a rally of support in Germany, following the shootings in France. In reality, it corresponds to a manifestation of the German anti-immigration movement Pegida.",
     Likes: 12,
     Comments: 0,
@@ -312,9 +304,6 @@ function openContext(ArticleNumber) {
 
   let imagePopUpContext = document.getElementById("ContextImage");
   imagePopUpContext.setAttribute("src", "../ImageSources/" + Data_Article[ArticleNumber].Image);
-
-  let namePopUpContext = document.getElementById("NameImage");
-  namePopUpContext.innerHTML = Data_Article[ArticleNumber].ImageName;
 
   let infoPopUpContext = document.getElementById("InformationsImage");
   infoPopUpContext.innerHTML = Data_Article[ArticleNumber].ImageContext;
